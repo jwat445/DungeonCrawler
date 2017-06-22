@@ -1,0 +1,25 @@
+TODO
+1. Random Map Generation
+ - make enemy positions in ogmo POTENTIAL positsions, then depending on where the player comes in from, dont spawn the close enemies
+ - add parts to rooms (
+ - add attributes to rooms (
+ - create map object that consists of rooms
+	- rooms must connect correctly (no doors leading nowhere)
+	- it must choose from a list of rooms based on their attributes
+ - randomly genreate rooms when a new map is created
+
+2. Pathfinding
+
+3. random dungeon name, maybe random player names
+
+4. replace art
+
+5. 
+GENERATE MAP- REWARD after all enemies dead, destructable tile, not all rooms need 4 doors, enemies that just wander, enemy bullets, put in right part of room
+have some enemy tiles be certain enemy, other tiles can be random enemy (so certain maps have a certain enemy configuration), room remember if beaten
+set a variable in the room to flag you have beaten, and when that flag is set you can also spawn reward for just beating room
+PATHFINDING- override FlxBaseTileMap.findmap to include entities from omgoloader not just walls, and then how to use what it returns (how to use paths)
+
+BUGS
+1. random bullet angle bug
+2. enemgy teleport to you when hit bug

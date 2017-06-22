@@ -1,0 +1,49 @@
+<level width="608" height="480" room="0">
+  <walls tileset="tiles" exportMode="CSV">2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+2,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,-1,-1,-1,1,1,1,1,1,1,2,2
+2,3,1,1,1,1,1,1,-1,-1,-1,1,1,1,1,1,1,3,2
+2,2,1,1,1,1,1,1,-1,-1,-1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+2,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,2
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2</walls>
+  <entities>
+    <player id="0" x="64" y="224" />
+    <enemy id="1" x="192" y="128" etype="walker" variant="default" />
+    <enemy id="2" x="384" y="128" etype="walker" variant="default" />
+    <enemy id="3" x="384" y="320" etype="walker" variant="default" />
+    <enemy id="4" x="192" y="320" etype="walker" variant="default" />
+    <hole id="5" x="320" y="192" />
+    <hole id="6" x="288" y="192" />
+    <hole id="7" x="256" y="192" />
+    <hole id="8" x="256" y="224" />
+    <hole id="9" x="288" y="224" />
+    <hole id="10" x="320" y="224" />
+    <hole id="11" x="320" y="256" />
+    <hole id="12" x="288" y="256" />
+    <hole id="13" x="256" y="256" />
+    <obstacle id="14" x="224" y="160" variant="rock" />
+    <obstacle id="15" x="224" y="192" variant="rock" />
+    <obstacle id="16" x="224" y="224" variant="rock" />
+    <obstacle id="17" x="224" y="256" variant="rock" />
+    <obstacle id="18" x="224" y="288" variant="rock" />
+    <obstacle id="19" x="256" y="288" variant="rock" />
+    <obstacle id="20" x="288" y="288" variant="rock" />
+    <obstacle id="21" x="320" y="288" variant="rock" />
+    <obstacle id="22" x="352" y="288" variant="rock" />
+    <obstacle id="23" x="352" y="256" variant="rock" />
+    <obstacle id="24" x="352" y="224" variant="rock" />
+    <obstacle id="25" x="352" y="192" variant="rock" />
+    <obstacle id="26" x="352" y="160" variant="rock" />
+    <obstacle id="27" x="320" y="160" variant="rock" />
+    <obstacle id="28" x="288" y="160" variant="rock" />
+    <obstacle id="29" x="256" y="160" variant="rock" />
+  </entities>
+</level>
