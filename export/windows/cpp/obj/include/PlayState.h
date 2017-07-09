@@ -73,10 +73,10 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::flixel::FlxState_obj
 		 ::flixel::_hx_system::FlxSound sndHurt;
 		 ::flixel::group::FlxTypedGroup grpCoins;
 		 ::flixel::group::FlxTypedGroup grpEnemies;
-		 ::flixel::group::FlxTypedGroup grpBullets;
+		 ::flixel::group::FlxTypedGroup grpPlayerBullets;
+		 ::flixel::group::FlxTypedGroup grpEnemyBullets;
 		 ::flixel::group::FlxTypedGroup grpHoles;
 		 ::flixel::group::FlxTypedGroup grpObstacles;
-		int bulletDelay;
 		 ::HUD hud;
 		int money;
 		int playerHealth;
@@ -113,14 +113,20 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::flixel::FlxState_obj
 		void moveRoom( ::flixel::FlxObject FlxTile, ::flixel::FlxObject player);
 		::Dynamic moveRoom_dyn();
 
-		void shoot();
-		::Dynamic shoot_dyn();
+		void playerShoot();
+		::Dynamic playerShoot_dyn();
+
+		void enemyShoot( ::Enemy enemyRef);
+		::Dynamic enemyShoot_dyn();
 
 		void bulletHitMap( ::Bullet bulletRef, ::flixel::FlxObject mapRef);
 		::Dynamic bulletHitMap_dyn();
 
 		void bulletHitEnemy( ::Bullet bulletRef, ::Enemy enemyRef);
 		::Dynamic bulletHitEnemy_dyn();
+
+		void bulletHitPlayer( ::Bullet bulletRef, ::Player playerRef);
+		::Dynamic bulletHitPlayer_dyn();
 
 };
 

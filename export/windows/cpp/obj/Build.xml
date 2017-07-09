@@ -4282,6 +4282,7 @@
    <depend name="include/flixel/addons/editors/ogmo/FlxOgmoLoader.h"/>
    <depend name="include/flixel/effects/FlxFlicker.h"/>
    <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroupIterator.h"/>
    <depend name="include/flixel/math/FlxPoint.h"/>
    <depend name="include/flixel/system/FlxSound.h"/>
    <depend name="include/flixel/system/FlxSoundGroup.h"/>
@@ -4500,7 +4501,6 @@
    <depend name="include/Enemy.h"/>
    <depend name="include/EnemySpitter.h"/>
    <depend name="include/FSM.h"/>
-   <depend name="include/Std.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>
@@ -4508,8 +4508,6 @@
    <depend name="include/flixel/FlxSprite.h"/>
    <depend name="include/flixel/animation/FlxAnimationController.h"/>
    <depend name="include/flixel/math/FlxPoint.h"/>
-   <depend name="include/flixel/math/FlxRandom.h"/>
-   <depend name="include/flixel/math/FlxVelocity.h"/>
    <depend name="include/flixel/system/FlxSound.h"/>
    <depend name="include/flixel/system/FlxSoundGroup.h"/>
    <depend name="include/flixel/system/frontEnds/SoundFrontEnd.h"/>
@@ -4742,6 +4740,7 @@
   </file>
   <file name="src/Bullet.cpp" >
    <depend name="include/Bullet.h"/>
+   <depend name="include/Enemy.h"/>
    <depend name="include/Player.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxObject.h"/>

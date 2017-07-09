@@ -10,9 +10,6 @@
 #ifndef INCLUDED_FSM
 #include <FSM.h>
 #endif
-#ifndef INCLUDED_Std
-#include <Std.h>
-#endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
@@ -33,12 +30,6 @@
 #endif
 #ifndef INCLUDED_flixel_math_FlxPoint
 #include <flixel/math/FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_math_FlxRandom
-#include <flixel/math/FlxRandom.h>
-#endif
-#ifndef INCLUDED_flixel_math_FlxVelocity
-#include <flixel/math/FlxVelocity.h>
 #endif
 #ifndef INCLUDED_flixel_system_FlxSound
 #include <flixel/system/FlxSound.h>
@@ -81,8 +72,7 @@ static const int _hx_array_data_d4b383d1_3[] = {
 static const int _hx_array_data_d4b383d1_4[] = {
 	(int)6,(int)7,(int)6,(int)8,
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_7819db3967a993f1_58_idle,"EnemySpitter","idle",0x556a5cd1,"EnemySpitter.idle","EnemySpitter.hx",58,0xfe69378d)
-HX_LOCAL_STACK_FRAME(_hx_pos_7819db3967a993f1_83_chase,"EnemySpitter","chase",0xf5dbed51,"EnemySpitter.chase","EnemySpitter.hx",83,0xfe69378d)
+HX_LOCAL_STACK_FRAME(_hx_pos_7819db3967a993f1_58_shoot,"EnemySpitter","shoot",0x2c4fd182,"EnemySpitter.shoot","EnemySpitter.hx",58,0xfe69378d)
 
 void EnemySpitter_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,::String Etype){
 Float X = __o_X.Default(0);
@@ -166,48 +156,15 @@ bool EnemySpitter_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-void EnemySpitter_obj::idle(){
-            	HX_STACKFRAME(&_hx_pos_7819db3967a993f1_58_idle)
+bool EnemySpitter_obj::shoot(){
+            	HX_STACKFRAME(&_hx_pos_7819db3967a993f1_58_shoot)
 HXDLIN(  58)		if (this->seesPlayer) {
-HXLINE(  60)			this->_brain->activeState = this->chase_dyn();
+HXLINE(  60)			return true;
             		}
             		else {
-HXLINE(  62)			if ((this->_idleTmr <= (int)0)) {
-HXLINE(  64)				if ((::flixel::FlxG_obj::random->_hx_float((int)0,(int)100,null()) < (int)1)) {
-HXLINE(  66)					this->_moveDir = (int)-1;
-HXLINE(  67)					 ::flixel::math::FlxPoint _hx_tmp = this->velocity;
-HXDLIN(  67)					_hx_tmp->set_x(this->velocity->set_y((int)0));
-            				}
-            				else {
-HXLINE(  71)					this->_moveDir = (::flixel::FlxG_obj::random->_hx_int((int)0,(int)8,null()) * (int)45);
-HXLINE(  72)					 ::flixel::math::FlxPoint _hx_tmp1 = this->velocity;
-HXDLIN(  72)					_hx_tmp1->set((this->speed * ((Float)0.5)),(int)0);
-HXLINE(  73)					 ::flixel::math::FlxPoint _hx_tmp2 = this->velocity;
-HXDLIN(  73)					 ::flixel::math::FlxPoint point = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN(  73)					point->_inPool = false;
-HXDLIN(  73)					 ::flixel::math::FlxPoint point1 = point;
-HXDLIN(  73)					point1->_weak = true;
-HXDLIN(  73)					_hx_tmp2->rotate(point1,this->_moveDir);
-            				}
-HXLINE(  75)				this->_idleTmr = ::flixel::FlxG_obj::random->_hx_int((int)1,(int)4,null());
-            			}
-            			else {
-HXLINE(  78)				 ::EnemySpitter _hx_tmp3 = hx::ObjectPtr<OBJ_>(this);
-HXDLIN(  78)				_hx_tmp3->_idleTmr = (_hx_tmp3->_idleTmr - ::flixel::FlxG_obj::elapsed);
-            			}
+HXLINE(  65)			return false;
             		}
-            	}
-
-
-void EnemySpitter_obj::chase(){
-            	HX_STACKFRAME(&_hx_pos_7819db3967a993f1_83_chase)
-HXDLIN(  83)		if (!(this->seesPlayer)) {
-HXLINE(  85)			this->_brain->activeState = this->idle_dyn();
-            		}
-            		else {
-HXLINE(  89)			 ::flixel::math::FlxPoint _hx_tmp = this->playerPos;
-HXDLIN(  89)			::flixel::math::FlxVelocity_obj::moveTowardsPoint(hx::ObjectPtr<OBJ_>(this),_hx_tmp,::Std_obj::_hx_int(this->speed),null());
-            		}
+HXLINE(  58)		return false;
             	}
 
 
@@ -232,11 +189,8 @@ EnemySpitter_obj::EnemySpitter_obj()
 hx::Val EnemySpitter_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 4:
-		if (HX_FIELD_EQ(inName,"idle") ) { return hx::Val( idle_dyn() ); }
-		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"chase") ) { return hx::Val( chase_dyn() ); }
+		if (HX_FIELD_EQ(inName,"shoot") ) { return hx::Val( shoot_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -247,8 +201,7 @@ static hx::StaticInfo *EnemySpitter_obj_sStaticStorageInfo = 0;
 #endif
 
 static ::String EnemySpitter_obj_sMemberFields[] = {
-	HX_HCSTRING("idle","\x14","\xa7","\xb3","\x45"),
-	HX_HCSTRING("chase","\xae","\x9d","\xb3","\x45"),
+	HX_HCSTRING("shoot","\xdf","\x81","\x27","\x7c"),
 	::String(null()) };
 
 static void EnemySpitter_obj_sMarkStatics(HX_MARK_PARAMS) {

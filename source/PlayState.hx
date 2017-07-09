@@ -35,11 +35,10 @@ class PlayState extends FlxState
 	//Object Groups
 	private var grpCoins:FlxTypedGroup<Coin>;
 	private var grpEnemies:FlxTypedGroup<Enemy>;
-	private var grpBullets:FlxTypedGroup<Bullet>;
+	private var grpPlayerBullets:FlxTypedGroup<Bullet>;
+	private var grpEnemyBullets:FlxTypedGroup<Bullet>;
 	private var grpHoles:FlxTypedGroup<Hole>;
 	private var grpObstacles:FlxTypedGroup<Obstacle>;
-
-	private var bulletDelay:Int;
 
 	//HUD
 	private var hud:HUD;
@@ -100,9 +99,11 @@ class PlayState extends FlxState
 		hud = new HUD();
 		add(hud);
 
-		grpBullets = new FlxTypedGroup<Bullet>();
-		add(grpBullets);
-		bulletDelay = 10;
+		grpPlayerBullets = new FlxTypedGroup<Bullet>();
+		add(grpPlayerBullets);
+		
+		grpEnemyBullets = new FlxTypedGroup<Bullet>();
+		add(grpEnemyBullets);
 
 		mWalls.setTileProperties(3, FlxObject.ANY, moveRoom, Player);
 		
@@ -179,11 +180,22 @@ class PlayState extends FlxState
 			roomClear = true;
 		}
 		else roomClear = false;
-		bulletDelay --;
-		if ((player.shoot()) && bulletDelay < 0)
+		
+		//check if player can shoot
+		player.bulletDelay --;
+		if ((player.shoot()) && player.bulletDelay < 0)
 		{
-			shoot();
+			playerShoot();
 		}
+		
+		//check if each enemy can shoot
+		for (enemy in grpEnemies) {
+			enemy.bulletDelay --;
+			if ((enemy.shoot()) && enemy.bulletDelay < 0)
+			{
+				enemyShoot(enemy);
+			}
+		}		
 
 		if (playerHealth < 1)
 		{
@@ -220,9 +232,13 @@ class PlayState extends FlxState
 		hud.updateHUD(playerHealth, money);
 
 		//check for bullet collisions
-		FlxG.collide(grpBullets, grpEnemies, bulletHitEnemy);
-		FlxG.collide(grpBullets, mWalls, bulletHitMap);
-		FlxG.collide(grpBullets, grpObstacles, bulletHitMap);
+		FlxG.collide(grpPlayerBullets, grpEnemies, bulletHitEnemy);
+		FlxG.collide(grpPlayerBullets, mWalls, bulletHitMap);
+		FlxG.collide(grpPlayerBullets, grpObstacles, bulletHitMap);
+		
+		FlxG.collide(grpEnemyBullets, player, bulletHitPlayer);
+		FlxG.collide(grpEnemyBullets, mWalls, bulletHitMap);
+		FlxG.collide(grpEnemyBullets, grpObstacles, bulletHitMap);
 	}
 
 	private function playerTouchCoin(P:Player, C:Coin):Void
@@ -300,18 +316,26 @@ class PlayState extends FlxState
 			mWalls.kill();
 			hud.destroy();
 			grpEnemies.destroy();
-			grpBullets.destroy();
+			grpPlayerBullets.destroy();
+			grpEnemyBullets.destroy();
 			grpCoins.destroy();
 			player.kill();
 			setup(floorMap[floorX][floorY], direction);
 		}
 	}
 
-	public function shoot():Void
+	public function playerShoot():Void
 	{
-		bulletDelay = 30;
-		var bullet = grpBullets.recycle(Bullet);
-		bullet.init(player);
+		player.bulletDelay = 30;
+		var bullet = grpPlayerBullets.recycle(Bullet);
+		bullet.initPlayer(player);
+	}
+	
+	public function enemyShoot(enemyRef:Enemy):Void
+	{
+		enemyRef.bulletDelay = 30;
+		var bullet = grpEnemyBullets.recycle(Bullet);
+		bullet.initEnemy(enemyRef);
 	}
 
 	function bulletHitMap(bulletRef:Bullet, mapRef:FlxObject):Void
@@ -325,5 +349,12 @@ class PlayState extends FlxState
 		bulletRef.kill();
 		enemyRef.damage(bulletRef);
 		trace("hit enemy: " + enemyRef);
+	}
+	
+	function bulletHitPlayer(bulletRef:Bullet, playerRef:Player):Void
+	{
+		bulletRef.kill();
+		playerHurt(player);
+		trace("hit Player");
 	}
 }

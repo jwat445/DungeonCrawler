@@ -53,40 +53,16 @@ class EnemySpitter extends Enemy
 		playerPos = FlxPoint.get();
 	}
 
-	override public function idle():Void
+	override public function shoot():Bool
 	{
 		if (seesPlayer)
 		{
-			_brain.activeState = chase;
-		}
-		else if (_idleTmr <= 0)
-		{
-			if (FlxG.random.bool(1))
-			{
-				_moveDir = -1;
-				velocity.x = velocity.y = 0;
-			}
-			else
-			{
-				_moveDir = FlxG.random.int(0, 8) * 45;
-				velocity.set(speed * 0.5, 0);
-				velocity.rotate(FlxPoint.weak(), _moveDir);
-			}
-			_idleTmr = FlxG.random.int(1, 4);
-		}
-		else
-			_idleTmr -= FlxG.elapsed;
-	}
-
-	override public function chase():Void
-	{
-		if (!seesPlayer)
-		{
-			_brain.activeState = idle;
+			return true;
+			trace("ENEMY SHOOT");
 		}
 		else
 		{
-			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
+			return false;
 		}
 	}
 }

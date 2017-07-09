@@ -10,6 +10,7 @@
 #include <flixel/FlxSprite.h>
 #endif
 HX_DECLARE_CLASS0(Bullet)
+HX_DECLARE_CLASS0(Enemy)
 HX_DECLARE_CLASS0(Player)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -51,8 +52,11 @@ class HXCPP_CLASS_ATTRIBUTES Bullet_obj : public  ::flixel::FlxSprite_obj
 		Float speed;
 		int direction;
 		int damage;
-		void init( ::Player _player);
-		::Dynamic init_dyn();
+		void initPlayer( ::Player _player);
+		::Dynamic initPlayer_dyn();
+
+		void initEnemy( ::Enemy enemy);
+		::Dynamic initEnemy_dyn();
 
 };
 

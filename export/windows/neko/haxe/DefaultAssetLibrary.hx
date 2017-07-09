@@ -86,6 +86,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -95,6 +96,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -654,6 +656,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -681,8 +684,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/room006.oel", AssetType.TEXT);
 		path.set ("assets/data/Tiles.oep", "assets/data/Tiles.oep");
 		type.set ("assets/data/Tiles.oep", AssetType.TEXT);
-		path.set ("assets/images/bullet.png", "assets/images/bullet.png");
-		type.set ("assets/images/bullet.png", AssetType.IMAGE);
+		path.set ("assets/images/bulletEnemy.png", "assets/images/bulletEnemy.png");
+		type.set ("assets/images/bulletEnemy.png", AssetType.IMAGE);
+		path.set ("assets/images/bulletPlayer.png", "assets/images/bulletPlayer.png");
+		type.set ("assets/images/bulletPlayer.png", AssetType.IMAGE);
 		path.set ("assets/images/button.png", "assets/images/button.png");
 		type.set ("assets/images/button.png", AssetType.IMAGE);
 		path.set ("assets/images/coin.png", "assets/images/coin.png");
@@ -763,7 +768,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/Tiles.oep";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
-		id = "assets/images/bullet.png";
+		id = "assets/images/bulletEnemy.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/bulletPlayer.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/button.png";
@@ -861,6 +869,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1653,6 +1662,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1662,6 +1672,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
 
 
 

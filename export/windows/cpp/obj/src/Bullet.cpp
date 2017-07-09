@@ -4,6 +4,9 @@
 #ifndef INCLUDED_Bullet
 #include <Bullet.h>
 #endif
+#ifndef INCLUDED_Enemy
+#include <Enemy.h>
+#endif
 #ifndef INCLUDED_Player
 #include <Player.h>
 #endif
@@ -27,7 +30,8 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_916b41f5f19492cb_10_new,"Bullet","new",0xf3208054,"Bullet.new","Bullet.hx",10,0xb42ce59c)
-HX_LOCAL_STACK_FRAME(_hx_pos_916b41f5f19492cb_17_init,"Bullet","init",0xc608809c,"Bullet.init","Bullet.hx",17,0xb42ce59c)
+HX_LOCAL_STACK_FRAME(_hx_pos_916b41f5f19492cb_17_initPlayer,"Bullet","initPlayer",0x7aca3d1d,"Bullet.initPlayer","Bullet.hx",17,0xb42ce59c)
+HX_LOCAL_STACK_FRAME(_hx_pos_916b41f5f19492cb_38_initEnemy,"Bullet","initEnemy",0x6e7c4c0c,"Bullet.initEnemy","Bullet.hx",38,0xb42ce59c)
 
 void Bullet_obj::__construct( ::Dynamic X, ::Dynamic Y, ::Dynamic SimpleGraphic){
             	HX_STACKFRAME(&_hx_pos_916b41f5f19492cb_10_new)
@@ -60,9 +64,9 @@ bool Bullet_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-void Bullet_obj::init( ::Player _player){
-            	HX_STACKFRAME(&_hx_pos_916b41f5f19492cb_17_init)
-HXLINE(  18)		this->loadGraphic(HX_("assets/images/bullet.png",e8,b3,4c,2c),false,(int)16,(int)16,true,null());
+void Bullet_obj::initPlayer( ::Player _player){
+            	HX_STACKFRAME(&_hx_pos_916b41f5f19492cb_17_initPlayer)
+HXLINE(  18)		this->loadGraphic(HX_("assets/images/bulletPlayer.png",a9,27,50,06),false,(int)16,(int)16,true,null());
 HXLINE(  19)		this->set_facing(_player->facing);
 HXLINE(  20)		this->set_x(_player->x);
 HXLINE(  21)		this->set_y(_player->y);
@@ -139,7 +143,30 @@ HXDLIN(  33)					_g5->set_y((_g5->y + _hx_tmp7));
             	}
 
 
-HX_DEFINE_DYNAMIC_FUNC1(Bullet_obj,init,(void))
+HX_DEFINE_DYNAMIC_FUNC1(Bullet_obj,initPlayer,(void))
+
+void Bullet_obj::initEnemy( ::Enemy enemy){
+            	HX_STACKFRAME(&_hx_pos_916b41f5f19492cb_38_initEnemy)
+HXLINE(  39)		this->loadGraphic(HX_("assets/images/bulletEnemy.png",96,09,fe,9f),false,(int)16,(int)16,true,null());
+HXLINE(  40)		this->set_facing(enemy->facing);
+HXLINE(  41)		this->set_x(enemy->x);
+HXLINE(  42)		this->set_y(enemy->y);
+HXLINE(  44)		this->velocity->set_x((int)10);
+HXLINE(  45)		{
+HXLINE(  45)			 ::flixel::math::FlxPoint _g = this->velocity;
+HXDLIN(  45)			Float _g1 = _g->x;
+HXDLIN(  45)			_g->set_x((_g1 + ((Float)enemy->velocity->x / (Float)(int)4)));
+            		}
+HXLINE(  46)		this->velocity->set_y((int)0);
+HXLINE(  47)		{
+HXLINE(  47)			 ::flixel::math::FlxPoint _g2 = this->velocity;
+HXDLIN(  47)			Float _g3 = _g2->y;
+HXDLIN(  47)			_g2->set_y((_g3 + ((Float)enemy->velocity->y / (Float)(int)4)));
+            		}
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Bullet_obj,initEnemy,(void))
 
 
 hx::ObjectPtr< Bullet_obj > Bullet_obj::__new( ::Dynamic X, ::Dynamic Y, ::Dynamic SimpleGraphic) {
@@ -162,9 +189,6 @@ Bullet_obj::Bullet_obj()
 hx::Val Bullet_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 4:
-		if (HX_FIELD_EQ(inName,"init") ) { return hx::Val( init_dyn() ); }
-		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"speed") ) { return hx::Val( speed ); }
 		break;
@@ -173,6 +197,10 @@ hx::Val Bullet_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"direction") ) { return hx::Val( direction ); }
+		if (HX_FIELD_EQ(inName,"initEnemy") ) { return hx::Val( initEnemy_dyn() ); }
+		break;
+	case 10:
+		if (HX_FIELD_EQ(inName,"initPlayer") ) { return hx::Val( initPlayer_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -214,7 +242,8 @@ static ::String Bullet_obj_sMemberFields[] = {
 	HX_HCSTRING("speed","\x87","\x97","\x69","\x81"),
 	HX_HCSTRING("direction","\x3f","\x62","\x40","\x10"),
 	HX_HCSTRING("damage","\x6f","\x90","\xe4","\x1d"),
-	HX_HCSTRING("init","\x10","\x3b","\xbb","\x45"),
+	HX_HCSTRING("initPlayer","\x91","\x46","\xfe","\x3b"),
+	HX_HCSTRING("initEnemy","\x18","\x2d","\x0d","\x8c"),
 	::String(null()) };
 
 static void Bullet_obj_sMarkStatics(HX_MARK_PARAMS) {

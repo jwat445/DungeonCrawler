@@ -52,6 +52,7 @@ class HXCPP_CLASS_ATTRIBUTES Player_obj : public  ::flixel::FlxSprite_obj
 
 		Float speed;
 		 ::flixel::_hx_system::FlxSound _sndStep;
+		int bulletDelay;
 		void update(Float elapsed);
 
 		void movement();

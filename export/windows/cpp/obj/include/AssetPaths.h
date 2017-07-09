@@ -58,7 +58,8 @@ class HXCPP_CLASS_ATTRIBUTES AssetPaths_obj : public hx::Object
 		static ::String room005__oel;
 		static ::String room006__oel;
 		static ::String Tiles__oep;
-		static ::String bullet__png;
+		static ::String bulletEnemy__png;
+		static ::String bulletPlayer__png;
 		static ::String button__png;
 		static ::String coin__png;
 		static ::String health__png;

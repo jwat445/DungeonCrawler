@@ -77,6 +77,9 @@
 #ifndef INCLUDED_flixel_group_FlxTypedGroup
 #include <flixel/group/FlxTypedGroup.h>
 #endif
+#ifndef INCLUDED_flixel_group_FlxTypedGroupIterator
+#include <flixel/group/FlxTypedGroupIterator.h>
+#endif
 #ifndef INCLUDED_flixel_math_FlxPoint
 #include <flixel/math/FlxPoint.h>
 #endif
@@ -130,25 +133,27 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_af23706db05c7feb_21_new,"PlayState","new",0xf8bf96cf,"PlayState.new","PlayState.hx",21,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_54_create,"PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",54,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_66_buildMap,"PlayState","buildMap",0x02761f3f,"PlayState.buildMap","PlayState.hx",66,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_75_setup,"PlayState","setup",0x39ed2eac,"PlayState.setup","PlayState.hx",75,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_140_placeEntities,"PlayState","placeEntities",0xcb21ad57,"PlayState.placeEntities","PlayState.hx",140,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_175_update,"PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",175,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_230_playerTouchCoin,"PlayState","playerTouchCoin",0x7f00763e,"PlayState.playerTouchCoin","PlayState.hx",230,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_240_checkEnemyVision,"PlayState","checkEnemyVision",0xe46dc499,"PlayState.checkEnemyVision","PlayState.hx",240,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_251_playerTouchEnemy,"PlayState","playerTouchEnemy",0xc787e8fb,"PlayState.playerTouchEnemy","PlayState.hx",251,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_258_playerHurt,"PlayState","playerHurt",0x33f1ad81,"PlayState.playerHurt","PlayState.hx",258,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_267_doneFadeOut,"PlayState","doneFadeOut",0xf3a9b17f,"PlayState.doneFadeOut","PlayState.hx",267,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_272_moveRoom,"PlayState","moveRoom",0x9d29e0fd,"PlayState.moveRoom","PlayState.hx",272,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_311_shoot,"PlayState","shoot",0x3be5020e,"PlayState.shoot","PlayState.hx",311,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_318_bulletHitMap,"PlayState","bulletHitMap",0x3db4899c,"PlayState.bulletHitMap","PlayState.hx",318,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_324_bulletHitEnemy,"PlayState","bulletHitEnemy",0xe87a5148,"PlayState.bulletHitEnemy","PlayState.hx",324,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_53_create,"PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",53,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_65_buildMap,"PlayState","buildMap",0x02761f3f,"PlayState.buildMap","PlayState.hx",65,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_74_setup,"PlayState","setup",0x39ed2eac,"PlayState.setup","PlayState.hx",74,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_141_placeEntities,"PlayState","placeEntities",0xcb21ad57,"PlayState.placeEntities","PlayState.hx",141,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_176_update,"PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",176,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_246_playerTouchCoin,"PlayState","playerTouchCoin",0x7f00763e,"PlayState.playerTouchCoin","PlayState.hx",246,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_256_checkEnemyVision,"PlayState","checkEnemyVision",0xe46dc499,"PlayState.checkEnemyVision","PlayState.hx",256,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_267_playerTouchEnemy,"PlayState","playerTouchEnemy",0xc787e8fb,"PlayState.playerTouchEnemy","PlayState.hx",267,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_274_playerHurt,"PlayState","playerHurt",0x33f1ad81,"PlayState.playerHurt","PlayState.hx",274,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_283_doneFadeOut,"PlayState","doneFadeOut",0xf3a9b17f,"PlayState.doneFadeOut","PlayState.hx",283,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_288_moveRoom,"PlayState","moveRoom",0x9d29e0fd,"PlayState.moveRoom","PlayState.hx",288,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_328_playerShoot,"PlayState","playerShoot",0x8c54742d,"PlayState.playerShoot","PlayState.hx",328,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_335_enemyShoot,"PlayState","enemyShoot",0xc3430fe8,"PlayState.enemyShoot","PlayState.hx",335,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_342_bulletHitMap,"PlayState","bulletHitMap",0x3db4899c,"PlayState.bulletHitMap","PlayState.hx",342,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_348_bulletHitEnemy,"PlayState","bulletHitEnemy",0xe87a5148,"PlayState.bulletHitEnemy","PlayState.hx",348,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_355_bulletHitPlayer,"PlayState","bulletHitPlayer",0xbf10cc61,"PlayState.bulletHitPlayer","PlayState.hx",355,0xb30d7781)
 
 void PlayState_obj::__construct( ::Dynamic MaxSize){
             	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_21_new)
-HXLINE(  47)		this->playerHealth = (int)3;
-HXLINE(  46)		this->money = (int)0;
+HXLINE(  46)		this->playerHealth = (int)3;
+HXLINE(  45)		this->money = (int)0;
 HXLINE(  28)		this->floorY = (int)4;
 HXLINE(  27)		this->floorX = (int)4;
 HXLINE(  21)		super::__construct(MaxSize);
@@ -178,110 +183,111 @@ bool PlayState_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void PlayState_obj::create(){
-            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_54_create)
-HXLINE(  55)		this->player =  ::Player_obj::__alloc( HX_CTX ,null(),null());
-HXLINE(  56)		this->roomClear = true;
-HXLINE(  57)		::Array< ::Dynamic> _g = ::Array_obj< ::Dynamic>::__new(0);
-HXDLIN(  57)		{
-HXLINE(  57)			int _g1 = (int)0;
-HXDLIN(  57)			while((_g1 < (int)9)){
-HXLINE(  57)				_g1 = (_g1 + (int)1);
-HXDLIN(  57)				int x = (_g1 - (int)1);
-HXDLIN(  57)				::Array< ::String > _g2 = ::Array_obj< ::String >::__new(0);
-HXDLIN(  57)				{
-HXLINE(  57)					int _g3 = (int)0;
-HXDLIN(  57)					while((_g3 < (int)9)){
-HXLINE(  57)						_g3 = (_g3 + (int)1);
-HXDLIN(  57)						int y = (_g3 - (int)1);
-HXDLIN(  57)						_g2->push(HX_("assets/data/room000.oel",44,3c,15,dc));
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_53_create)
+HXLINE(  54)		this->player =  ::Player_obj::__alloc( HX_CTX ,null(),null());
+HXLINE(  55)		this->roomClear = true;
+HXLINE(  56)		::Array< ::Dynamic> _g = ::Array_obj< ::Dynamic>::__new(0);
+HXDLIN(  56)		{
+HXLINE(  56)			int _g1 = (int)0;
+HXDLIN(  56)			while((_g1 < (int)9)){
+HXLINE(  56)				_g1 = (_g1 + (int)1);
+HXDLIN(  56)				int x = (_g1 - (int)1);
+HXDLIN(  56)				::Array< ::String > _g2 = ::Array_obj< ::String >::__new(0);
+HXDLIN(  56)				{
+HXLINE(  56)					int _g3 = (int)0;
+HXDLIN(  56)					while((_g3 < (int)9)){
+HXLINE(  56)						_g3 = (_g3 + (int)1);
+HXDLIN(  56)						int y = (_g3 - (int)1);
+HXDLIN(  56)						_g2->push(HX_("assets/data/room000.oel",44,3c,15,dc));
             					}
             				}
-HXDLIN(  57)				_g->push(_g2);
+HXDLIN(  56)				_g->push(_g2);
             			}
             		}
-HXDLIN(  57)		this->floorMap = _g;
-HXLINE(  58)		this->buildMap();
-HXLINE(  59)		this->setup(this->floorMap->__get(this->floorX).StaticCast< ::Array< ::String > >()->__get(this->floorY),(int)0);
-HXLINE(  60)		::flixel::FlxG_obj::camera->follow(this->player,::flixel::FlxCameraFollowStyle_obj::TOPDOWN_dyn(),(int)1);
-HXLINE(  61)		this->sndHurt = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/hurt.wav",6c,32,7c,8f),null(),null(),null(),null(),null(),null(),null());
-HXLINE(  62)		this->super::create();
+HXDLIN(  56)		this->floorMap = _g;
+HXLINE(  57)		this->buildMap();
+HXLINE(  58)		this->setup(this->floorMap->__get(this->floorX).StaticCast< ::Array< ::String > >()->__get(this->floorY),(int)0);
+HXLINE(  59)		::flixel::FlxG_obj::camera->follow(this->player,::flixel::FlxCameraFollowStyle_obj::TOPDOWN_dyn(),(int)1);
+HXLINE(  60)		this->sndHurt = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/hurt.wav",6c,32,7c,8f),null(),null(),null(),null(),null(),null(),null());
+HXLINE(  61)		this->super::create();
             	}
 
 
 void PlayState_obj::buildMap(){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_66_buildMap)
-HXLINE(  68)		this->floorMap->__get((int)4).StaticCast< ::Array< ::String > >()[(int)4] = HX_("assets/data/room001.oel",c5,d0,7b,6f);
-HXLINE(  69)		this->floorMap->__get((int)5).StaticCast< ::Array< ::String > >()[(int)4] = HX_("assets/data/room002.oel",46,65,e2,02);
-HXLINE(  70)		this->floorMap->__get((int)5).StaticCast< ::Array< ::String > >()[(int)5] = HX_("assets/data/room003.oel",c7,f9,48,96);
-HXLINE(  71)		this->floorMap->__get((int)4).StaticCast< ::Array< ::String > >()[(int)5] = HX_("assets/data/room004.oel",48,8e,af,29);
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_65_buildMap)
+HXLINE(  67)		this->floorMap->__get((int)4).StaticCast< ::Array< ::String > >()[(int)4] = HX_("assets/data/room001.oel",c5,d0,7b,6f);
+HXLINE(  68)		this->floorMap->__get((int)5).StaticCast< ::Array< ::String > >()[(int)4] = HX_("assets/data/room002.oel",46,65,e2,02);
+HXLINE(  69)		this->floorMap->__get((int)5).StaticCast< ::Array< ::String > >()[(int)5] = HX_("assets/data/room003.oel",c7,f9,48,96);
+HXLINE(  70)		this->floorMap->__get((int)4).StaticCast< ::Array< ::String > >()[(int)5] = HX_("assets/data/room004.oel",48,8e,af,29);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,buildMap,(void))
 
 void PlayState_obj::setup( ::Dynamic path, ::Dynamic direction){
-            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_75_setup)
-HXLINE(  76)		this->map =  ::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__alloc( HX_CTX ,path);
-HXLINE(  77)		this->mWalls = this->map->loadTilemap(HX_("assets/images/tiles.png",35,bc,d1,f5),(int)32,(int)32,HX_("walls",29,0c,1f,c5));
-HXLINE(  78)		this->mWalls->follow(null(),null(),null());
-HXLINE(  79)		this->mWalls->setTileProperties((int)0,(int)0,null(),null(),null());
-HXLINE(  80)		this->mWalls->setTileProperties((int)1,(int)0,null(),null(),null());
-HXLINE(  81)		this->mWalls->setTileProperties((int)2,(int)4369,null(),null(),null());
-HXLINE(  82)		this->add(this->mWalls);
-HXLINE(  84)		this->grpHoles =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
-HXLINE(  85)		this->add(this->grpHoles);
-HXLINE(  86)		this->grpObstacles =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
-HXLINE(  87)		this->add(this->grpObstacles);
-HXLINE(  89)		this->grpCoins =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
-HXLINE(  90)		this->add(this->grpCoins);
-HXLINE(  91)		this->sndCoin = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/coin.wav",ee,74,61,6a),null(),null(),null(),null(),null(),null(),null());
-HXLINE(  93)		this->grpEnemies =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
-HXLINE(  94)		this->add(this->grpEnemies);
-HXLINE(  96)		this->player =  ::Player_obj::__alloc( HX_CTX ,null(),null());
-HXLINE(  97)		this->map->loadEntities(this->placeEntities_dyn(),HX_("entities",41,96,95,92));
-HXLINE(  98)		this->add(this->player);
-HXLINE( 100)		this->hud =  ::HUD_obj::__alloc( HX_CTX );
-HXLINE( 101)		this->add(this->hud);
-HXLINE( 103)		this->grpBullets =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
-HXLINE( 104)		this->add(this->grpBullets);
-HXLINE( 105)		this->bulletDelay = (int)10;
-HXLINE( 107)		this->mWalls->setTileProperties((int)3,(int)4369,this->moveRoom_dyn(),hx::ClassOf< ::Player >(),null());
-HXLINE( 109)		if (hx::IsNull( direction )) {
-HXLINE( 132)			this->player->set_x((int)0);
-HXLINE( 133)			this->player->set_y((int)0);
-HXLINE( 134)			HX_STACK_DO_THROW(HX_("Player direction not specified when entering room",a8,1c,b4,9a));
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_74_setup)
+HXLINE(  75)		this->map =  ::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__alloc( HX_CTX ,path);
+HXLINE(  76)		this->mWalls = this->map->loadTilemap(HX_("assets/images/tiles.png",35,bc,d1,f5),(int)32,(int)32,HX_("walls",29,0c,1f,c5));
+HXLINE(  77)		this->mWalls->follow(null(),null(),null());
+HXLINE(  78)		this->mWalls->setTileProperties((int)0,(int)0,null(),null(),null());
+HXLINE(  79)		this->mWalls->setTileProperties((int)1,(int)0,null(),null(),null());
+HXLINE(  80)		this->mWalls->setTileProperties((int)2,(int)4369,null(),null(),null());
+HXLINE(  81)		this->add(this->mWalls);
+HXLINE(  83)		this->grpHoles =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE(  84)		this->add(this->grpHoles);
+HXLINE(  85)		this->grpObstacles =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE(  86)		this->add(this->grpObstacles);
+HXLINE(  88)		this->grpCoins =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE(  89)		this->add(this->grpCoins);
+HXLINE(  90)		this->sndCoin = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/coin.wav",ee,74,61,6a),null(),null(),null(),null(),null(),null(),null());
+HXLINE(  92)		this->grpEnemies =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE(  93)		this->add(this->grpEnemies);
+HXLINE(  95)		this->player =  ::Player_obj::__alloc( HX_CTX ,null(),null());
+HXLINE(  96)		this->map->loadEntities(this->placeEntities_dyn(),HX_("entities",41,96,95,92));
+HXLINE(  97)		this->add(this->player);
+HXLINE(  99)		this->hud =  ::HUD_obj::__alloc( HX_CTX );
+HXLINE( 100)		this->add(this->hud);
+HXLINE( 102)		this->grpPlayerBullets =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE( 103)		this->add(this->grpPlayerBullets);
+HXLINE( 105)		this->grpEnemyBullets =  ::flixel::group::FlxTypedGroup_obj::__alloc( HX_CTX ,null());
+HXLINE( 106)		this->add(this->grpEnemyBullets);
+HXLINE( 108)		this->mWalls->setTileProperties((int)3,(int)4369,this->moveRoom_dyn(),hx::ClassOf< ::Player >(),null());
+HXLINE( 110)		if (hx::IsNull( direction )) {
+HXLINE( 133)			this->player->set_x((int)0);
+HXLINE( 134)			this->player->set_y((int)0);
+HXLINE( 135)			HX_STACK_DO_THROW(HX_("UH OH Player direction not specified when entering room",ce,32,6f,66));
             		}
             		else {
-HXLINE( 109)			 ::Dynamic _hx_switch_0 = direction;
+HXLINE( 110)			 ::Dynamic _hx_switch_0 = direction;
             			if (  (_hx_switch_0==(int)0) ){
-HXLINE( 113)				this->player->set_x((int)288);
-HXLINE( 114)				this->player->set_y((int)224);
-HXLINE( 111)				goto _hx_goto_5;
+HXLINE( 114)				this->player->set_x((int)288);
+HXLINE( 115)				this->player->set_y((int)224);
+HXLINE( 112)				goto _hx_goto_5;
             			}
             			if (  (_hx_switch_0==(int)1) ){
-HXLINE( 117)				this->player->set_x((int)288);
-HXLINE( 118)				this->player->set_y((int)64);
-HXLINE( 115)				goto _hx_goto_5;
+HXLINE( 118)				this->player->set_x((int)288);
+HXLINE( 119)				this->player->set_y((int)64);
+HXLINE( 116)				goto _hx_goto_5;
             			}
             			if (  (_hx_switch_0==(int)2) ){
-HXLINE( 121)				this->player->set_x((int)512);
-HXLINE( 122)				this->player->set_y((int)224);
-HXLINE( 119)				goto _hx_goto_5;
+HXLINE( 122)				this->player->set_x((int)512);
+HXLINE( 123)				this->player->set_y((int)224);
+HXLINE( 120)				goto _hx_goto_5;
             			}
             			if (  (_hx_switch_0==(int)3) ){
-HXLINE( 125)				this->player->set_x((int)288);
-HXLINE( 126)				this->player->set_y((int)384);
-HXLINE( 123)				goto _hx_goto_5;
+HXLINE( 126)				this->player->set_x((int)288);
+HXLINE( 127)				this->player->set_y((int)384);
+HXLINE( 124)				goto _hx_goto_5;
             			}
             			if (  (_hx_switch_0==(int)4) ){
-HXLINE( 129)				this->player->set_x((int)64);
-HXLINE( 130)				this->player->set_y((int)224);
-HXLINE( 127)				goto _hx_goto_5;
+HXLINE( 130)				this->player->set_x((int)64);
+HXLINE( 131)				this->player->set_y((int)224);
+HXLINE( 128)				goto _hx_goto_5;
             			}
             			/* default */{
-HXLINE( 132)				this->player->set_x((int)0);
-HXLINE( 133)				this->player->set_y((int)0);
-HXLINE( 134)				HX_STACK_DO_THROW(HX_("Player direction not specified when entering room",a8,1c,b4,9a));
+HXLINE( 133)				this->player->set_x((int)0);
+HXLINE( 134)				this->player->set_y((int)0);
+HXLINE( 135)				HX_STACK_DO_THROW(HX_("UH OH Player direction not specified when entering room",ce,32,6f,66));
             			}
             			_hx_goto_5:;
             		}
@@ -291,51 +297,51 @@ HXLINE( 134)				HX_STACK_DO_THROW(HX_("Player direction not specified when enter
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,setup,(void))
 
 void PlayState_obj::placeEntities(::String entityName, ::Xml entityData){
-            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_140_placeEntities)
-HXLINE( 141)		int x = ::Std_obj::parseInt(entityData->get(HX_("x",78,00,00,00)));
-HXLINE( 142)		int y = ::Std_obj::parseInt(entityData->get(HX_("y",79,00,00,00)));
-HXLINE( 143)		if ((entityName != HX_("player",61,eb,b8,37))) {
-HXLINE( 148)			if ((entityName == HX_("coin",91,b5,c4,41))) {
-HXLINE( 150)				 ::flixel::group::FlxTypedGroup _hx_tmp = this->grpCoins;
-HXDLIN( 150)				_hx_tmp->add( ::Coin_obj::__alloc( HX_CTX ,(x + (int)8),(y + (int)8))).StaticCast<  ::Coin >();
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_141_placeEntities)
+HXLINE( 142)		int x = ::Std_obj::parseInt(entityData->get(HX_("x",78,00,00,00)));
+HXLINE( 143)		int y = ::Std_obj::parseInt(entityData->get(HX_("y",79,00,00,00)));
+HXLINE( 144)		if ((entityName != HX_("player",61,eb,b8,37))) {
+HXLINE( 149)			if ((entityName == HX_("coin",91,b5,c4,41))) {
+HXLINE( 151)				 ::flixel::group::FlxTypedGroup _hx_tmp = this->grpCoins;
+HXDLIN( 151)				_hx_tmp->add( ::Coin_obj::__alloc( HX_CTX ,(x + (int)8),(y + (int)8))).StaticCast<  ::Coin >();
             			}
             			else {
-HXLINE( 152)				if ((entityName == HX_("hole",40,c9,12,45))) {
-HXLINE( 154)					 ::flixel::group::FlxTypedGroup _hx_tmp1 = this->grpHoles;
-HXDLIN( 154)					_hx_tmp1->add( ::Hole_obj::__alloc( HX_CTX ,x,y)).StaticCast<  ::Hole >();
+HXLINE( 153)				if ((entityName == HX_("hole",40,c9,12,45))) {
+HXLINE( 155)					 ::flixel::group::FlxTypedGroup _hx_tmp1 = this->grpHoles;
+HXDLIN( 155)					_hx_tmp1->add( ::Hole_obj::__alloc( HX_CTX ,x,y)).StaticCast<  ::Hole >();
             				}
             				else {
-HXLINE( 156)					if ((entityName == HX_("obstacle",4f,ea,05,be))) {
-HXLINE( 158)						 ::flixel::group::FlxTypedGroup _hx_tmp2 = this->grpObstacles;
-HXDLIN( 158)						_hx_tmp2->add( ::Obstacle_obj::__alloc( HX_CTX ,x,y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Obstacle >();
+HXLINE( 157)					if ((entityName == HX_("obstacle",4f,ea,05,be))) {
+HXLINE( 159)						 ::flixel::group::FlxTypedGroup _hx_tmp2 = this->grpObstacles;
+HXDLIN( 159)						_hx_tmp2->add( ::Obstacle_obj::__alloc( HX_CTX ,x,y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Obstacle >();
             					}
             					else {
-HXLINE( 160)						bool _hx_tmp3;
-HXDLIN( 160)						bool _hx_tmp4;
-HXDLIN( 160)						if ((entityName == HX_("enemy",48,12,7b,70))) {
-HXLINE( 160)							_hx_tmp4 = (::Math_obj::abs((this->player->x - x)) > (int)40);
+HXLINE( 161)						bool _hx_tmp3;
+HXDLIN( 161)						bool _hx_tmp4;
+HXDLIN( 161)						if ((entityName == HX_("enemy",48,12,7b,70))) {
+HXLINE( 161)							_hx_tmp4 = (::Math_obj::abs((this->player->x - x)) > (int)40);
             						}
             						else {
-HXLINE( 160)							_hx_tmp4 = false;
+HXLINE( 161)							_hx_tmp4 = false;
             						}
-HXDLIN( 160)						if (_hx_tmp4) {
-HXLINE( 160)							_hx_tmp3 = (::Math_obj::abs((this->player->y - y)) > (int)40);
+HXDLIN( 161)						if (_hx_tmp4) {
+HXLINE( 161)							_hx_tmp3 = (::Math_obj::abs((this->player->y - y)) > (int)40);
             						}
             						else {
-HXLINE( 160)							_hx_tmp3 = false;
+HXLINE( 161)							_hx_tmp3 = false;
             						}
-HXDLIN( 160)						if (_hx_tmp3) {
-HXLINE( 162)							::String _g = entityData->get(HX_("etype",9f,89,81,74));
-HXDLIN( 162)							::String _hx_switch_0 = _g;
+HXDLIN( 161)						if (_hx_tmp3) {
+HXLINE( 163)							::String _g = entityData->get(HX_("etype",9f,89,81,74));
+HXDLIN( 163)							::String _hx_switch_0 = _g;
             							if (  (_hx_switch_0==HX_("head",20,29,0b,45)) ){
-HXLINE( 167)								 ::flixel::group::FlxTypedGroup _hx_tmp5 = this->grpEnemies;
-HXDLIN( 167)								_hx_tmp5->add( ::EnemySpitter_obj::__alloc( HX_CTX ,(x + (int)8),y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Enemy >();
-HXDLIN( 167)								goto _hx_goto_7;
+HXLINE( 168)								 ::flixel::group::FlxTypedGroup _hx_tmp5 = this->grpEnemies;
+HXDLIN( 168)								_hx_tmp5->add( ::EnemySpitter_obj::__alloc( HX_CTX ,(x + (int)8),y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Enemy >();
+HXDLIN( 168)								goto _hx_goto_7;
             							}
             							if (  (_hx_switch_0==HX_("walker",b6,c9,0a,b6)) ){
-HXLINE( 165)								 ::flixel::group::FlxTypedGroup _hx_tmp6 = this->grpEnemies;
-HXDLIN( 165)								_hx_tmp6->add( ::EnemyWalker_obj::__alloc( HX_CTX ,(x + (int)8),y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Enemy >();
-HXDLIN( 165)								goto _hx_goto_7;
+HXLINE( 166)								 ::flixel::group::FlxTypedGroup _hx_tmp6 = this->grpEnemies;
+HXDLIN( 166)								_hx_tmp6->add( ::EnemyWalker_obj::__alloc( HX_CTX ,(x + (int)8),y,entityData->get(HX_("variant",85,40,e2,dc)))).StaticCast<  ::Enemy >();
+HXDLIN( 166)								goto _hx_goto_7;
             							}
             							/* default */{
             							}
@@ -351,82 +357,102 @@ HXDLIN( 165)								goto _hx_goto_7;
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,placeEntities,(void))
 
 void PlayState_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_175_update)
-HXLINE( 176)		this->super::update(elapsed);
-HXLINE( 177)		if ((this->grpEnemies->countLiving() <= (int)0)) {
-HXLINE( 179)			this->roomClear = true;
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_176_update)
+HXLINE( 177)		this->super::update(elapsed);
+HXLINE( 178)		if ((this->grpEnemies->countLiving() <= (int)0)) {
+HXLINE( 180)			this->roomClear = true;
             		}
             		else {
-HXLINE( 181)			this->roomClear = false;
+HXLINE( 182)			this->roomClear = false;
             		}
-HXLINE( 182)		this->bulletDelay--;
-HXLINE( 183)		bool _hx_tmp;
-HXDLIN( 183)		if (this->player->shoot()) {
-HXLINE( 183)			_hx_tmp = (this->bulletDelay < (int)0);
+HXLINE( 185)		this->player->bulletDelay--;
+HXLINE( 186)		bool _hx_tmp;
+HXDLIN( 186)		if (this->player->shoot()) {
+HXLINE( 186)			_hx_tmp = (this->player->bulletDelay < (int)0);
             		}
             		else {
-HXLINE( 183)			_hx_tmp = false;
+HXLINE( 186)			_hx_tmp = false;
             		}
-HXDLIN( 183)		if (_hx_tmp) {
-HXLINE( 185)			this->shoot();
+HXDLIN( 186)		if (_hx_tmp) {
+HXLINE( 188)			this->playerShoot();
             		}
-HXLINE( 188)		if ((this->playerHealth < (int)1)) {
-HXLINE( 190)			this->ending = true;
-HXLINE( 191)			::flixel::FlxG_obj::camera->fade((int)-16777216,((Float).33),false,this->doneFadeOut_dyn(),null());
+HXLINE( 192)		{
+HXLINE( 192)			 ::flixel::group::FlxTypedGroupIterator enemy =  ::flixel::group::FlxTypedGroupIterator_obj::__alloc( HX_CTX ,this->grpEnemies->members,null());
+HXDLIN( 192)			while(enemy->hasNext()){
+HXLINE( 192)				 ::Enemy enemy1 = enemy->next().StaticCast<  ::Enemy >();
+HXLINE( 193)				enemy1->bulletDelay--;
+HXLINE( 194)				bool _hx_tmp1;
+HXDLIN( 194)				if (enemy1->shoot()) {
+HXLINE( 194)					_hx_tmp1 = (enemy1->bulletDelay < (int)0);
+            				}
+            				else {
+HXLINE( 194)					_hx_tmp1 = false;
+            				}
+HXDLIN( 194)				if (_hx_tmp1) {
+HXLINE( 196)					this->enemyShoot(enemy1);
+            				}
+            			}
             		}
-HXLINE( 195)		if ((this->money > (int)9)) {
-HXLINE( 197)			this->won = true;
-HXLINE( 198)			this->ending = true;
-HXLINE( 199)			::flixel::FlxG_obj::camera->fade((int)-16777216,((Float).33),false,this->doneFadeOut_dyn(),null());
+HXLINE( 200)		if ((this->playerHealth < (int)1)) {
+HXLINE( 202)			this->ending = true;
+HXLINE( 203)			::flixel::FlxG_obj::camera->fade((int)-16777216,((Float).33),false,this->doneFadeOut_dyn(),null());
             		}
-HXLINE( 202)		if (this->ending) {
-HXLINE( 204)			return;
+HXLINE( 207)		if ((this->money > (int)9)) {
+HXLINE( 209)			this->won = true;
+HXLINE( 210)			this->ending = true;
+HXLINE( 211)			::flixel::FlxG_obj::camera->fade((int)-16777216,((Float).33),false,this->doneFadeOut_dyn(),null());
             		}
-HXLINE( 207)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->mWalls) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 208)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpHoles) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 209)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 210)		::flixel::FlxG_obj::overlap(this->player,this->grpCoins,this->playerTouchCoin_dyn(),null());
-HXLINE( 211)		::flixel::FlxG_obj::overlap(this->player,this->grpEnemies,this->playerTouchEnemy_dyn(),null());
-HXLINE( 212)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 214)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 215)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpHoles) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 216)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->mWalls) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 217)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),null(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 218)		this->grpEnemies->forEachAlive(this->checkEnemyVision_dyn(),null());
-HXLINE( 220)		this->hud->updateHUD(this->playerHealth,this->money);
-HXLINE( 223)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpBullets) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),this->bulletHitEnemy_dyn(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 224)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpBullets) ),( ( ::flixel::FlxBasic)(this->mWalls) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
-HXLINE( 225)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpBullets) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 214)		if (this->ending) {
+HXLINE( 216)			return;
+            		}
+HXLINE( 219)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->mWalls) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 220)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpHoles) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 221)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 222)		::flixel::FlxG_obj::overlap(this->player,this->grpCoins,this->playerTouchCoin_dyn(),null());
+HXLINE( 223)		::flixel::FlxG_obj::overlap(this->player,this->grpEnemies,this->playerTouchEnemy_dyn(),null());
+HXLINE( 224)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->player) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 226)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 227)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpHoles) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 228)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->mWalls) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 229)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemies) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),null(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 230)		this->grpEnemies->forEachAlive(this->checkEnemyVision_dyn(),null());
+HXLINE( 232)		this->hud->updateHUD(this->playerHealth,this->money);
+HXLINE( 235)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpPlayerBullets) ),( ( ::flixel::FlxBasic)(this->grpEnemies) ),this->bulletHitEnemy_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 236)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpPlayerBullets) ),( ( ::flixel::FlxBasic)(this->mWalls) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 237)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpPlayerBullets) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 239)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemyBullets) ),( ( ::flixel::FlxBasic)(this->player) ),this->bulletHitPlayer_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 240)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemyBullets) ),( ( ::flixel::FlxBasic)(this->mWalls) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
+HXLINE( 241)		::flixel::FlxG_obj::overlap(( ( ::flixel::FlxBasic)(this->grpEnemyBullets) ),( ( ::flixel::FlxBasic)(this->grpObstacles) ),this->bulletHitMap_dyn(),::flixel::FlxObject_obj::separate_dyn());
             	}
 
 
 void PlayState_obj::playerTouchCoin( ::Player P, ::Coin C){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_230_playerTouchCoin)
-HXDLIN( 230)		bool _hx_tmp;
-HXDLIN( 230)		bool _hx_tmp1;
-HXDLIN( 230)		bool _hx_tmp2;
-HXDLIN( 230)		if (P->alive) {
-HXDLIN( 230)			_hx_tmp2 = P->exists;
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_246_playerTouchCoin)
+HXDLIN( 246)		bool _hx_tmp;
+HXDLIN( 246)		bool _hx_tmp1;
+HXDLIN( 246)		bool _hx_tmp2;
+HXDLIN( 246)		if (P->alive) {
+HXDLIN( 246)			_hx_tmp2 = P->exists;
             		}
             		else {
-HXDLIN( 230)			_hx_tmp2 = false;
+HXDLIN( 246)			_hx_tmp2 = false;
             		}
-HXDLIN( 230)		if (_hx_tmp2) {
-HXDLIN( 230)			_hx_tmp1 = C->alive;
-            		}
-            		else {
-HXDLIN( 230)			_hx_tmp1 = false;
-            		}
-HXDLIN( 230)		if (_hx_tmp1) {
-HXDLIN( 230)			_hx_tmp = C->exists;
+HXDLIN( 246)		if (_hx_tmp2) {
+HXDLIN( 246)			_hx_tmp1 = C->alive;
             		}
             		else {
-HXDLIN( 230)			_hx_tmp = false;
+HXDLIN( 246)			_hx_tmp1 = false;
             		}
-HXDLIN( 230)		if (_hx_tmp) {
-HXLINE( 232)			this->money++;
-HXLINE( 233)			this->sndCoin->play(true,null(),null());
-HXLINE( 234)			C->kill();
+HXDLIN( 246)		if (_hx_tmp1) {
+HXDLIN( 246)			_hx_tmp = C->exists;
+            		}
+            		else {
+HXDLIN( 246)			_hx_tmp = false;
+            		}
+HXDLIN( 246)		if (_hx_tmp) {
+HXLINE( 248)			this->money++;
+HXLINE( 249)			this->sndCoin->play(true,null(),null());
+HXLINE( 250)			C->kill();
             		}
             	}
 
@@ -434,23 +460,23 @@ HXLINE( 234)			C->kill();
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,playerTouchCoin,(void))
 
 void PlayState_obj::checkEnemyVision( ::Enemy e){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_240_checkEnemyVision)
-HXDLIN( 240)		 ::flixel::tile::FlxTilemap _hx_tmp = this->mWalls;
-HXDLIN( 240)		 ::flixel::math::FlxPoint _hx_tmp1 = e->getMidpoint(null());
-HXDLIN( 240)		if (_hx_tmp->ray(_hx_tmp1,this->player->getMidpoint(null()),null(),null())) {
-HXLINE( 242)			e->seesPlayer = true;
-HXLINE( 243)			{
-HXLINE( 243)				 ::flixel::math::FlxPoint _this = e->playerPos;
-HXDLIN( 243)				 ::flixel::math::FlxPoint point = this->player->getMidpoint(null());
-HXDLIN( 243)				_this->set_x(point->x);
-HXDLIN( 243)				_this->set_y(point->y);
-HXDLIN( 243)				if (point->_weak) {
-HXLINE( 243)					point->put();
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_256_checkEnemyVision)
+HXDLIN( 256)		 ::flixel::tile::FlxTilemap _hx_tmp = this->mWalls;
+HXDLIN( 256)		 ::flixel::math::FlxPoint _hx_tmp1 = e->getMidpoint(null());
+HXDLIN( 256)		if (_hx_tmp->ray(_hx_tmp1,this->player->getMidpoint(null()),null(),null())) {
+HXLINE( 258)			e->seesPlayer = true;
+HXLINE( 259)			{
+HXLINE( 259)				 ::flixel::math::FlxPoint _this = e->playerPos;
+HXDLIN( 259)				 ::flixel::math::FlxPoint point = this->player->getMidpoint(null());
+HXDLIN( 259)				_this->set_x(point->x);
+HXDLIN( 259)				_this->set_y(point->y);
+HXDLIN( 259)				if (point->_weak) {
+HXLINE( 259)					point->put();
             				}
             			}
             		}
             		else {
-HXLINE( 246)			e->seesPlayer = false;
+HXLINE( 262)			e->seesPlayer = false;
             		}
             	}
 
@@ -458,37 +484,37 @@ HXLINE( 246)			e->seesPlayer = false;
 HX_DEFINE_DYNAMIC_FUNC1(PlayState_obj,checkEnemyVision,(void))
 
 void PlayState_obj::playerTouchEnemy( ::Player P, ::EnemyWalker E){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_251_playerTouchEnemy)
-HXDLIN( 251)		bool _hx_tmp;
-HXDLIN( 251)		bool _hx_tmp1;
-HXDLIN( 251)		bool _hx_tmp2;
-HXDLIN( 251)		bool _hx_tmp3;
-HXDLIN( 251)		if (P->alive) {
-HXDLIN( 251)			_hx_tmp3 = P->exists;
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_267_playerTouchEnemy)
+HXDLIN( 267)		bool _hx_tmp;
+HXDLIN( 267)		bool _hx_tmp1;
+HXDLIN( 267)		bool _hx_tmp2;
+HXDLIN( 267)		bool _hx_tmp3;
+HXDLIN( 267)		if (P->alive) {
+HXDLIN( 267)			_hx_tmp3 = P->exists;
             		}
             		else {
-HXDLIN( 251)			_hx_tmp3 = false;
+HXDLIN( 267)			_hx_tmp3 = false;
             		}
-HXDLIN( 251)		if (_hx_tmp3) {
-HXDLIN( 251)			_hx_tmp2 = E->alive;
-            		}
-            		else {
-HXDLIN( 251)			_hx_tmp2 = false;
-            		}
-HXDLIN( 251)		if (_hx_tmp2) {
-HXDLIN( 251)			_hx_tmp1 = E->exists;
+HXDLIN( 267)		if (_hx_tmp3) {
+HXDLIN( 267)			_hx_tmp2 = E->alive;
             		}
             		else {
-HXDLIN( 251)			_hx_tmp1 = false;
+HXDLIN( 267)			_hx_tmp2 = false;
             		}
-HXDLIN( 251)		if (_hx_tmp1) {
-HXDLIN( 251)			_hx_tmp = !(::flixel::effects::FlxFlicker_obj::isFlickering(P));
+HXDLIN( 267)		if (_hx_tmp2) {
+HXDLIN( 267)			_hx_tmp1 = E->exists;
             		}
             		else {
-HXDLIN( 251)			_hx_tmp = false;
+HXDLIN( 267)			_hx_tmp1 = false;
             		}
-HXDLIN( 251)		if (_hx_tmp) {
-HXLINE( 253)			this->playerHurt(P);
+HXDLIN( 267)		if (_hx_tmp1) {
+HXDLIN( 267)			_hx_tmp = !(::flixel::effects::FlxFlicker_obj::isFlickering(P));
+            		}
+            		else {
+HXDLIN( 267)			_hx_tmp = false;
+            		}
+HXDLIN( 267)		if (_hx_tmp) {
+HXLINE( 269)			this->playerHurt(P);
             		}
             	}
 
@@ -496,21 +522,21 @@ HXLINE( 253)			this->playerHurt(P);
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,playerTouchEnemy,(void))
 
 void PlayState_obj::playerHurt( ::Player P){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_258_playerHurt)
-HXLINE( 259)		this->playerHealth--;
-HXLINE( 260)		this->sndHurt->play(null(),null(),null());
-HXLINE( 261)		::flixel::effects::FlxFlicker_obj::flicker(P,(int)1,((Float)0.04),true,true,null(),null());
-HXLINE( 262)		::flixel::FlxG_obj::camera->shake(((Float)0.01),((Float)0.2),null(),null(),null());
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_274_playerHurt)
+HXLINE( 275)		this->playerHealth--;
+HXLINE( 276)		this->sndHurt->play(null(),null(),null());
+HXLINE( 277)		::flixel::effects::FlxFlicker_obj::flicker(P,(int)1,((Float)0.04),true,true,null(),null());
+HXLINE( 278)		::flixel::FlxG_obj::camera->shake(((Float)0.01),((Float)0.2),null(),null(),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(PlayState_obj,playerHurt,(void))
 
 void PlayState_obj::doneFadeOut(){
-            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_267_doneFadeOut)
-HXDLIN( 267)		 ::flixel::FlxState nextState =  ::GameOverState_obj::__alloc( HX_CTX ,this->won,this->money);
-HXDLIN( 267)		if (::flixel::FlxG_obj::game->_state->switchTo(nextState)) {
-HXDLIN( 267)			::flixel::FlxG_obj::game->_requestedState = nextState;
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_283_doneFadeOut)
+HXDLIN( 283)		 ::flixel::FlxState nextState =  ::GameOverState_obj::__alloc( HX_CTX ,this->won,this->money);
+HXDLIN( 283)		if (::flixel::FlxG_obj::game->_state->switchTo(nextState)) {
+HXDLIN( 283)			::flixel::FlxG_obj::game->_requestedState = nextState;
             		}
             	}
 
@@ -518,146 +544,167 @@ HXDLIN( 267)			::flixel::FlxG_obj::game->_requestedState = nextState;
 HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,doneFadeOut,(void))
 
 void PlayState_obj::moveRoom( ::flixel::FlxObject FlxTile, ::flixel::FlxObject player){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_272_moveRoom)
-HXDLIN( 272)		if (this->roomClear) {
-HXLINE( 274)			int direction = (int)0;
-HXLINE( 275)			bool _hx_tmp;
-HXDLIN( 275)			bool _hx_tmp1;
-HXDLIN( 275)			if ((player->x > (int)300)) {
-HXLINE( 275)				_hx_tmp1 = (player->y > (int)100);
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_288_moveRoom)
+HXDLIN( 288)		if (this->roomClear) {
+HXLINE( 290)			int direction = (int)0;
+HXLINE( 291)			bool _hx_tmp;
+HXDLIN( 291)			bool _hx_tmp1;
+HXDLIN( 291)			if ((player->x > (int)300)) {
+HXLINE( 291)				_hx_tmp1 = (player->y > (int)100);
             			}
             			else {
-HXLINE( 275)				_hx_tmp1 = false;
+HXLINE( 291)				_hx_tmp1 = false;
             			}
-HXDLIN( 275)			if (_hx_tmp1) {
-HXLINE( 275)				_hx_tmp = (player->y < (int)400);
-            			}
-            			else {
-HXLINE( 275)				_hx_tmp = false;
-            			}
-HXDLIN( 275)			if (_hx_tmp) {
-HXLINE( 277)				direction = (int)4;
-HXLINE( 278)				 ::PlayState _hx_tmp2 = hx::ObjectPtr<OBJ_>(this);
-HXDLIN( 278)				_hx_tmp2->floorX = (_hx_tmp2->floorX + (int)1);
-HXLINE( 279)				::haxe::Log_obj::trace(HX_("moved right",2f,0c,5d,fe),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),279,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+HXDLIN( 291)			if (_hx_tmp1) {
+HXLINE( 291)				_hx_tmp = (player->y < (int)400);
             			}
             			else {
-HXLINE( 281)				bool _hx_tmp3;
-HXDLIN( 281)				bool _hx_tmp4;
-HXDLIN( 281)				if ((player->x < (int)100)) {
-HXLINE( 281)					_hx_tmp4 = (player->y > (int)100);
+HXLINE( 291)				_hx_tmp = false;
+            			}
+HXDLIN( 291)			if (_hx_tmp) {
+HXLINE( 293)				direction = (int)4;
+HXLINE( 294)				 ::PlayState _hx_tmp2 = hx::ObjectPtr<OBJ_>(this);
+HXDLIN( 294)				_hx_tmp2->floorX = (_hx_tmp2->floorX + (int)1);
+HXLINE( 295)				::haxe::Log_obj::trace(HX_("moved right",2f,0c,5d,fe),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),295,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+            			}
+            			else {
+HXLINE( 297)				bool _hx_tmp3;
+HXDLIN( 297)				bool _hx_tmp4;
+HXDLIN( 297)				if ((player->x < (int)100)) {
+HXLINE( 297)					_hx_tmp4 = (player->y > (int)100);
             				}
             				else {
-HXLINE( 281)					_hx_tmp4 = false;
+HXLINE( 297)					_hx_tmp4 = false;
             				}
-HXDLIN( 281)				if (_hx_tmp4) {
-HXLINE( 281)					_hx_tmp3 = (player->y < (int)400);
-            				}
-            				else {
-HXLINE( 281)					_hx_tmp3 = false;
-            				}
-HXDLIN( 281)				if (_hx_tmp3) {
-HXLINE( 283)					direction = (int)2;
-HXLINE( 284)					 ::PlayState _hx_tmp5 = hx::ObjectPtr<OBJ_>(this);
-HXDLIN( 284)					_hx_tmp5->floorX = (_hx_tmp5->floorX - (int)1);
-HXLINE( 285)					::haxe::Log_obj::trace(HX_("moved left",14,b3,cc,cb),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),285,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+HXDLIN( 297)				if (_hx_tmp4) {
+HXLINE( 297)					_hx_tmp3 = (player->y < (int)400);
             				}
             				else {
-HXLINE( 287)					bool _hx_tmp6;
-HXDLIN( 287)					bool _hx_tmp7;
-HXDLIN( 287)					if ((player->y > (int)200)) {
-HXLINE( 287)						_hx_tmp7 = (player->x > (int)100);
+HXLINE( 297)					_hx_tmp3 = false;
+            				}
+HXDLIN( 297)				if (_hx_tmp3) {
+HXLINE( 299)					direction = (int)2;
+HXLINE( 300)					 ::PlayState _hx_tmp5 = hx::ObjectPtr<OBJ_>(this);
+HXDLIN( 300)					_hx_tmp5->floorX = (_hx_tmp5->floorX - (int)1);
+HXLINE( 301)					::haxe::Log_obj::trace(HX_("moved left",14,b3,cc,cb),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),301,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+            				}
+            				else {
+HXLINE( 303)					bool _hx_tmp6;
+HXDLIN( 303)					bool _hx_tmp7;
+HXDLIN( 303)					if ((player->y > (int)200)) {
+HXLINE( 303)						_hx_tmp7 = (player->x > (int)100);
             					}
             					else {
-HXLINE( 287)						_hx_tmp7 = false;
+HXLINE( 303)						_hx_tmp7 = false;
             					}
-HXDLIN( 287)					if (_hx_tmp7) {
-HXLINE( 287)						_hx_tmp6 = (player->x < (int)400);
-            					}
-            					else {
-HXLINE( 287)						_hx_tmp6 = false;
-            					}
-HXDLIN( 287)					if (_hx_tmp6) {
-HXLINE( 289)						direction = (int)1;
-HXLINE( 290)						 ::PlayState _hx_tmp8 = hx::ObjectPtr<OBJ_>(this);
-HXDLIN( 290)						_hx_tmp8->floorY = (_hx_tmp8->floorY - (int)1);
-HXLINE( 291)						::haxe::Log_obj::trace(HX_("moved down",6f,a3,8a,c6),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),291,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+HXDLIN( 303)					if (_hx_tmp7) {
+HXLINE( 303)						_hx_tmp6 = (player->x < (int)400);
             					}
             					else {
-HXLINE( 293)						bool _hx_tmp9;
-HXDLIN( 293)						bool _hx_tmp10;
-HXDLIN( 293)						if ((player->y < (int)200)) {
-HXLINE( 293)							_hx_tmp10 = (player->x > (int)100);
+HXLINE( 303)						_hx_tmp6 = false;
+            					}
+HXDLIN( 303)					if (_hx_tmp6) {
+HXLINE( 305)						direction = (int)1;
+HXLINE( 306)						 ::PlayState _hx_tmp8 = hx::ObjectPtr<OBJ_>(this);
+HXDLIN( 306)						_hx_tmp8->floorY = (_hx_tmp8->floorY - (int)1);
+HXLINE( 307)						::haxe::Log_obj::trace(HX_("moved down",6f,a3,8a,c6),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),307,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+            					}
+            					else {
+HXLINE( 309)						bool _hx_tmp9;
+HXDLIN( 309)						bool _hx_tmp10;
+HXDLIN( 309)						if ((player->y < (int)200)) {
+HXLINE( 309)							_hx_tmp10 = (player->x > (int)100);
             						}
             						else {
-HXLINE( 293)							_hx_tmp10 = false;
+HXLINE( 309)							_hx_tmp10 = false;
             						}
-HXDLIN( 293)						if (_hx_tmp10) {
-HXLINE( 293)							_hx_tmp9 = (player->x < (int)400);
+HXDLIN( 309)						if (_hx_tmp10) {
+HXLINE( 309)							_hx_tmp9 = (player->x < (int)400);
             						}
             						else {
-HXLINE( 293)							_hx_tmp9 = false;
+HXLINE( 309)							_hx_tmp9 = false;
             						}
-HXDLIN( 293)						if (_hx_tmp9) {
-HXLINE( 295)							direction = (int)3;
-HXLINE( 296)							 ::PlayState _hx_tmp11 = hx::ObjectPtr<OBJ_>(this);
-HXDLIN( 296)							_hx_tmp11->floorY = (_hx_tmp11->floorY + (int)1);
-HXLINE( 297)							::haxe::Log_obj::trace(HX_("moved up",28,44,10,fa),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),297,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
+HXDLIN( 309)						if (_hx_tmp9) {
+HXLINE( 311)							direction = (int)3;
+HXLINE( 312)							 ::PlayState _hx_tmp11 = hx::ObjectPtr<OBJ_>(this);
+HXDLIN( 312)							_hx_tmp11->floorY = (_hx_tmp11->floorY + (int)1);
+HXLINE( 313)							::haxe::Log_obj::trace(HX_("moved up",28,44,10,fa),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),313,HX_("PlayState",5d,83,c2,46),HX_("moveRoom",cc,59,66,ee)));
             						}
             					}
             				}
             			}
-HXLINE( 299)			::haxe::Log_obj::trace(this->floorX, ::Dynamic(hx::Anon_obj::Create(5)
+HXLINE( 315)			::haxe::Log_obj::trace(this->floorX, ::Dynamic(hx::Anon_obj::Create(5)
             				->setFixed(0,HX_("className",a3,92,3d,dc),HX_("PlayState",5d,83,c2,46))
             				->setFixed(1,HX_("customParams",d7,51,18,ed),::cpp::VirtualArray_obj::__new(1)->init(0,this->floorY))
             				->setFixed(2,HX_("methodName",cc,19,0f,12),HX_("moveRoom",cc,59,66,ee))
             				->setFixed(3,HX_("fileName",e7,5a,43,62),HX_("PlayState.hx",81,77,0d,b3))
-            				->setFixed(4,HX_("lineNumber",dd,81,22,76),(int)299)));
-HXLINE( 300)			this->mWalls->kill();
-HXLINE( 301)			this->hud->destroy();
-HXLINE( 302)			this->grpEnemies->destroy();
-HXLINE( 303)			this->grpBullets->destroy();
-HXLINE( 304)			this->grpCoins->destroy();
-HXLINE( 305)			player->kill();
-HXLINE( 306)			this->setup(this->floorMap->__get(this->floorX).StaticCast< ::Array< ::String > >()->__get(this->floorY),direction);
+            				->setFixed(4,HX_("lineNumber",dd,81,22,76),(int)315)));
+HXLINE( 316)			this->mWalls->kill();
+HXLINE( 317)			this->hud->destroy();
+HXLINE( 318)			this->grpEnemies->destroy();
+HXLINE( 319)			this->grpPlayerBullets->destroy();
+HXLINE( 320)			this->grpEnemyBullets->destroy();
+HXLINE( 321)			this->grpCoins->destroy();
+HXLINE( 322)			player->kill();
+HXLINE( 323)			this->setup(this->floorMap->__get(this->floorX).StaticCast< ::Array< ::String > >()->__get(this->floorY),direction);
             		}
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,moveRoom,(void))
 
-void PlayState_obj::shoot(){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_311_shoot)
-HXLINE( 312)		this->bulletDelay = (int)30;
-HXLINE( 313)		 ::Bullet bullet = this->grpBullets->recycle(hx::ClassOf< ::Bullet >(),null(),null(),null()).StaticCast<  ::Bullet >();
-HXLINE( 314)		bullet->init(this->player);
+void PlayState_obj::playerShoot(){
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_328_playerShoot)
+HXLINE( 329)		this->player->bulletDelay = (int)30;
+HXLINE( 330)		 ::Bullet bullet = this->grpPlayerBullets->recycle(hx::ClassOf< ::Bullet >(),null(),null(),null()).StaticCast<  ::Bullet >();
+HXLINE( 331)		bullet->initPlayer(this->player);
             	}
 
 
-HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,shoot,(void))
+HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,playerShoot,(void))
+
+void PlayState_obj::enemyShoot( ::Enemy enemyRef){
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_335_enemyShoot)
+HXLINE( 336)		enemyRef->bulletDelay = (int)30;
+HXLINE( 337)		 ::Bullet bullet = this->grpEnemyBullets->recycle(hx::ClassOf< ::Bullet >(),null(),null(),null()).StaticCast<  ::Bullet >();
+HXLINE( 338)		bullet->initEnemy(enemyRef);
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(PlayState_obj,enemyShoot,(void))
 
 void PlayState_obj::bulletHitMap( ::Bullet bulletRef, ::flixel::FlxObject mapRef){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_318_bulletHitMap)
-HXLINE( 319)		bulletRef->kill();
-HXLINE( 320)		 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
-HXDLIN( 320)		::String _hx_tmp1 = (HX_("hit map: ",b5,ee,08,ce) + ::Std_obj::string(mapRef));
-HXDLIN( 320)		_hx_tmp(_hx_tmp1,hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),320,HX_("PlayState",5d,83,c2,46),HX_("bulletHitMap",eb,15,7f,22)));
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_342_bulletHitMap)
+HXLINE( 343)		bulletRef->kill();
+HXLINE( 344)		 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
+HXDLIN( 344)		::String _hx_tmp1 = (HX_("hit map: ",b5,ee,08,ce) + ::Std_obj::string(mapRef));
+HXDLIN( 344)		_hx_tmp(_hx_tmp1,hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),344,HX_("PlayState",5d,83,c2,46),HX_("bulletHitMap",eb,15,7f,22)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,bulletHitMap,(void))
 
 void PlayState_obj::bulletHitEnemy( ::Bullet bulletRef, ::Enemy enemyRef){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_324_bulletHitEnemy)
-HXLINE( 325)		bulletRef->kill();
-HXLINE( 326)		enemyRef->damage(bulletRef);
-HXLINE( 327)		 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
-HXDLIN( 327)		::String _hx_tmp1 = (HX_("hit enemy: ",21,fc,b2,c7) + ::Std_obj::string(enemyRef));
-HXDLIN( 327)		_hx_tmp(_hx_tmp1,hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),327,HX_("PlayState",5d,83,c2,46),HX_("bulletHitEnemy",57,cf,3b,7e)));
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_348_bulletHitEnemy)
+HXLINE( 349)		bulletRef->kill();
+HXLINE( 350)		enemyRef->damage(bulletRef);
+HXLINE( 351)		 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
+HXDLIN( 351)		::String _hx_tmp1 = (HX_("hit enemy: ",21,fc,b2,c7) + ::Std_obj::string(enemyRef));
+HXDLIN( 351)		_hx_tmp(_hx_tmp1,hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),351,HX_("PlayState",5d,83,c2,46),HX_("bulletHitEnemy",57,cf,3b,7e)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,bulletHitEnemy,(void))
+
+void PlayState_obj::bulletHitPlayer( ::Bullet bulletRef, ::Player playerRef){
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_355_bulletHitPlayer)
+HXLINE( 356)		bulletRef->kill();
+HXLINE( 357)		this->playerHurt(this->player);
+HXLINE( 358)		::haxe::Log_obj::trace(HX_("hit Player",ae,b1,1c,2d),hx::SourceInfo(HX_("PlayState.hx",81,77,0d,b3),358,HX_("PlayState",5d,83,c2,46),HX_("bulletHitPlayer",72,9b,9d,32)));
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,bulletHitPlayer,(void))
 
 
 hx::ObjectPtr< PlayState_obj > PlayState_obj::__new( ::Dynamic MaxSize) {
@@ -691,10 +738,10 @@ void PlayState_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(sndHurt,"sndHurt");
 	HX_MARK_MEMBER_NAME(grpCoins,"grpCoins");
 	HX_MARK_MEMBER_NAME(grpEnemies,"grpEnemies");
-	HX_MARK_MEMBER_NAME(grpBullets,"grpBullets");
+	HX_MARK_MEMBER_NAME(grpPlayerBullets,"grpPlayerBullets");
+	HX_MARK_MEMBER_NAME(grpEnemyBullets,"grpEnemyBullets");
 	HX_MARK_MEMBER_NAME(grpHoles,"grpHoles");
 	HX_MARK_MEMBER_NAME(grpObstacles,"grpObstacles");
-	HX_MARK_MEMBER_NAME(bulletDelay,"bulletDelay");
 	HX_MARK_MEMBER_NAME(hud,"hud");
 	HX_MARK_MEMBER_NAME(money,"money");
 	HX_MARK_MEMBER_NAME(playerHealth,"playerHealth");
@@ -717,10 +764,10 @@ void PlayState_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(sndHurt,"sndHurt");
 	HX_VISIT_MEMBER_NAME(grpCoins,"grpCoins");
 	HX_VISIT_MEMBER_NAME(grpEnemies,"grpEnemies");
-	HX_VISIT_MEMBER_NAME(grpBullets,"grpBullets");
+	HX_VISIT_MEMBER_NAME(grpPlayerBullets,"grpPlayerBullets");
+	HX_VISIT_MEMBER_NAME(grpEnemyBullets,"grpEnemyBullets");
 	HX_VISIT_MEMBER_NAME(grpHoles,"grpHoles");
 	HX_VISIT_MEMBER_NAME(grpObstacles,"grpObstacles");
-	HX_VISIT_MEMBER_NAME(bulletDelay,"bulletDelay");
 	HX_VISIT_MEMBER_NAME(hud,"hud");
 	HX_VISIT_MEMBER_NAME(money,"money");
 	HX_VISIT_MEMBER_NAME(playerHealth,"playerHealth");
@@ -740,7 +787,6 @@ hx::Val PlayState_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 	case 5:
 		if (HX_FIELD_EQ(inName,"money") ) { return hx::Val( money ); }
 		if (HX_FIELD_EQ(inName,"setup") ) { return hx::Val( setup_dyn() ); }
-		if (HX_FIELD_EQ(inName,"shoot") ) { return hx::Val( shoot_dyn() ); }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"player") ) { return hx::Val( player ); }
@@ -767,12 +813,12 @@ hx::Val PlayState_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"grpEnemies") ) { return hx::Val( grpEnemies ); }
-		if (HX_FIELD_EQ(inName,"grpBullets") ) { return hx::Val( grpBullets ); }
 		if (HX_FIELD_EQ(inName,"playerHurt") ) { return hx::Val( playerHurt_dyn() ); }
+		if (HX_FIELD_EQ(inName,"enemyShoot") ) { return hx::Val( enemyShoot_dyn() ); }
 		break;
 	case 11:
-		if (HX_FIELD_EQ(inName,"bulletDelay") ) { return hx::Val( bulletDelay ); }
 		if (HX_FIELD_EQ(inName,"doneFadeOut") ) { return hx::Val( doneFadeOut_dyn() ); }
+		if (HX_FIELD_EQ(inName,"playerShoot") ) { return hx::Val( playerShoot_dyn() ); }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"grpObstacles") ) { return hx::Val( grpObstacles ); }
@@ -786,9 +832,12 @@ hx::Val PlayState_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		if (HX_FIELD_EQ(inName,"bulletHitEnemy") ) { return hx::Val( bulletHitEnemy_dyn() ); }
 		break;
 	case 15:
+		if (HX_FIELD_EQ(inName,"grpEnemyBullets") ) { return hx::Val( grpEnemyBullets ); }
 		if (HX_FIELD_EQ(inName,"playerTouchCoin") ) { return hx::Val( playerTouchCoin_dyn() ); }
+		if (HX_FIELD_EQ(inName,"bulletHitPlayer") ) { return hx::Val( bulletHitPlayer_dyn() ); }
 		break;
 	case 16:
+		if (HX_FIELD_EQ(inName,"grpPlayerBullets") ) { return hx::Val( grpPlayerBullets ); }
 		if (HX_FIELD_EQ(inName,"checkEnemyVision") ) { return hx::Val( checkEnemyVision_dyn() ); }
 		if (HX_FIELD_EQ(inName,"playerTouchEnemy") ) { return hx::Val( playerTouchEnemy_dyn() ); }
 	}
@@ -827,14 +876,16 @@ hx::Val PlayState_obj::__SetField(const ::String &inName,const hx::Val &inValue,
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"grpEnemies") ) { grpEnemies=inValue.Cast<  ::flixel::group::FlxTypedGroup >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"grpBullets") ) { grpBullets=inValue.Cast<  ::flixel::group::FlxTypedGroup >(); return inValue; }
-		break;
-	case 11:
-		if (HX_FIELD_EQ(inName,"bulletDelay") ) { bulletDelay=inValue.Cast< int >(); return inValue; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"grpObstacles") ) { grpObstacles=inValue.Cast<  ::flixel::group::FlxTypedGroup >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"playerHealth") ) { playerHealth=inValue.Cast< int >(); return inValue; }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"grpEnemyBullets") ) { grpEnemyBullets=inValue.Cast<  ::flixel::group::FlxTypedGroup >(); return inValue; }
+		break;
+	case 16:
+		if (HX_FIELD_EQ(inName,"grpPlayerBullets") ) { grpPlayerBullets=inValue.Cast<  ::flixel::group::FlxTypedGroup >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -852,10 +903,10 @@ void PlayState_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("sndHurt","\x18","\x94","\x68","\x6d"));
 	outFields->push(HX_HCSTRING("grpCoins","\x9d","\xcf","\x5a","\x2d"));
 	outFields->push(HX_HCSTRING("grpEnemies","\x41","\x7b","\xe8","\xf3"));
-	outFields->push(HX_HCSTRING("grpBullets","\x8c","\x7a","\xc9","\x4a"));
+	outFields->push(HX_HCSTRING("grpPlayerBullets","\x6b","\xbb","\x9a","\x91"));
+	outFields->push(HX_HCSTRING("grpEnemyBullets","\x0e","\x72","\x11","\xed"));
 	outFields->push(HX_HCSTRING("grpHoles","\x0e","\xf5","\x5d","\x0e"));
 	outFields->push(HX_HCSTRING("grpObstacles","\x9f","\x4a","\x9f","\x20"));
-	outFields->push(HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a"));
 	outFields->push(HX_HCSTRING("hud","\xb7","\x50","\x4f","\x00"));
 	outFields->push(HX_HCSTRING("money","\x40","\xba","\x5f","\x0c"));
 	outFields->push(HX_HCSTRING("playerHealth","\xdd","\xc6","\xf7","\xf8"));
@@ -877,10 +928,10 @@ static hx::StorageInfo PlayState_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::_hx_system::FlxSound*/ ,(int)offsetof(PlayState_obj,sndHurt),HX_HCSTRING("sndHurt","\x18","\x94","\x68","\x6d")},
 	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpCoins),HX_HCSTRING("grpCoins","\x9d","\xcf","\x5a","\x2d")},
 	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpEnemies),HX_HCSTRING("grpEnemies","\x41","\x7b","\xe8","\xf3")},
-	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpBullets),HX_HCSTRING("grpBullets","\x8c","\x7a","\xc9","\x4a")},
+	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpPlayerBullets),HX_HCSTRING("grpPlayerBullets","\x6b","\xbb","\x9a","\x91")},
+	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpEnemyBullets),HX_HCSTRING("grpEnemyBullets","\x0e","\x72","\x11","\xed")},
 	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpHoles),HX_HCSTRING("grpHoles","\x0e","\xf5","\x5d","\x0e")},
 	{hx::fsObject /*::flixel::group::FlxTypedGroup*/ ,(int)offsetof(PlayState_obj,grpObstacles),HX_HCSTRING("grpObstacles","\x9f","\x4a","\x9f","\x20")},
-	{hx::fsInt,(int)offsetof(PlayState_obj,bulletDelay),HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a")},
 	{hx::fsObject /*::HUD*/ ,(int)offsetof(PlayState_obj,hud),HX_HCSTRING("hud","\xb7","\x50","\x4f","\x00")},
 	{hx::fsInt,(int)offsetof(PlayState_obj,money),HX_HCSTRING("money","\x40","\xba","\x5f","\x0c")},
 	{hx::fsInt,(int)offsetof(PlayState_obj,playerHealth),HX_HCSTRING("playerHealth","\xdd","\xc6","\xf7","\xf8")},
@@ -903,10 +954,10 @@ static ::String PlayState_obj_sMemberFields[] = {
 	HX_HCSTRING("sndHurt","\x18","\x94","\x68","\x6d"),
 	HX_HCSTRING("grpCoins","\x9d","\xcf","\x5a","\x2d"),
 	HX_HCSTRING("grpEnemies","\x41","\x7b","\xe8","\xf3"),
-	HX_HCSTRING("grpBullets","\x8c","\x7a","\xc9","\x4a"),
+	HX_HCSTRING("grpPlayerBullets","\x6b","\xbb","\x9a","\x91"),
+	HX_HCSTRING("grpEnemyBullets","\x0e","\x72","\x11","\xed"),
 	HX_HCSTRING("grpHoles","\x0e","\xf5","\x5d","\x0e"),
 	HX_HCSTRING("grpObstacles","\x9f","\x4a","\x9f","\x20"),
-	HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a"),
 	HX_HCSTRING("hud","\xb7","\x50","\x4f","\x00"),
 	HX_HCSTRING("money","\x40","\xba","\x5f","\x0c"),
 	HX_HCSTRING("playerHealth","\xdd","\xc6","\xf7","\xf8"),
@@ -923,9 +974,11 @@ static ::String PlayState_obj_sMemberFields[] = {
 	HX_HCSTRING("playerHurt","\x10","\x38","\xd9","\xa7"),
 	HX_HCSTRING("doneFadeOut","\x10","\x64","\x5b","\xea"),
 	HX_HCSTRING("moveRoom","\xcc","\x59","\x66","\xee"),
-	HX_HCSTRING("shoot","\xdf","\x81","\x27","\x7c"),
+	HX_HCSTRING("playerShoot","\xbe","\x26","\x06","\x83"),
+	HX_HCSTRING("enemyShoot","\x77","\x9a","\x2a","\x37"),
 	HX_HCSTRING("bulletHitMap","\xeb","\x15","\x7f","\x22"),
 	HX_HCSTRING("bulletHitEnemy","\x57","\xcf","\x3b","\x7e"),
+	HX_HCSTRING("bulletHitPlayer","\x72","\x9b","\x9d","\x32"),
 	::String(null()) };
 
 static void PlayState_obj_sMarkStatics(HX_MARK_PARAMS) {

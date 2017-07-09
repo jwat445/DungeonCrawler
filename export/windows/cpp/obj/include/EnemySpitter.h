@@ -46,9 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES EnemySpitter_obj : public  ::Enemy_obj
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("EnemySpitter","\xd1","\x83","\xb3","\xd4"); }
 
-		void idle();
-
-		void chase();
+		bool shoot();
 
 };
 

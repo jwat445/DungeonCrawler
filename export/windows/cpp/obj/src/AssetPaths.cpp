@@ -42,7 +42,9 @@ bool AssetPaths_obj::_hx_isInstanceOf(int inClassId) {
 
 ::String AssetPaths_obj::Tiles__oep;
 
-::String AssetPaths_obj::bullet__png;
+::String AssetPaths_obj::bulletEnemy__png;
+
+::String AssetPaths_obj::bulletPlayer__png;
 
 ::String AssetPaths_obj::button__png;
 
@@ -97,7 +99,8 @@ static hx::StaticInfo AssetPaths_obj_sStaticStorageInfo[] = {
 	{hx::fsString,(void *) &AssetPaths_obj::room005__oel,HX_HCSTRING("room005__oel","\x3c","\xbe","\x59","\x01")},
 	{hx::fsString,(void *) &AssetPaths_obj::room006__oel,HX_HCSTRING("room006__oel","\x9b","\x1a","\xb5","\x67")},
 	{hx::fsString,(void *) &AssetPaths_obj::Tiles__oep,HX_HCSTRING("Tiles__oep","\xf5","\xd7","\xee","\x13")},
-	{hx::fsString,(void *) &AssetPaths_obj::bullet__png,HX_HCSTRING("bullet__png","\x07","\xbc","\xdd","\x11")},
+	{hx::fsString,(void *) &AssetPaths_obj::bulletEnemy__png,HX_HCSTRING("bulletEnemy__png","\x23","\x23","\xcb","\x4b")},
+	{hx::fsString,(void *) &AssetPaths_obj::bulletPlayer__png,HX_HCSTRING("bulletPlayer__png","\x66","\x7b","\x64","\xbf")},
 	{hx::fsString,(void *) &AssetPaths_obj::button__png,HX_HCSTRING("button__png","\x57","\x0e","\xaf","\xac")},
 	{hx::fsString,(void *) &AssetPaths_obj::coin__png,HX_HCSTRING("coin__png","\x58","\x3a","\xfc","\x5b")},
 	{hx::fsString,(void *) &AssetPaths_obj::health__png,HX_HCSTRING("health__png","\x6d","\xdf","\x86","\xa5")},
@@ -131,7 +134,8 @@ static void AssetPaths_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::room005__oel,"room005__oel");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::room006__oel,"room006__oel");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::Tiles__oep,"Tiles__oep");
-	HX_MARK_MEMBER_NAME(AssetPaths_obj::bullet__png,"bullet__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::bulletEnemy__png,"bulletEnemy__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::bulletPlayer__png,"bulletPlayer__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::button__png,"button__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::coin__png,"coin__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::health__png,"health__png");
@@ -164,7 +168,8 @@ static void AssetPaths_obj_sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::room005__oel,"room005__oel");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::room006__oel,"room006__oel");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::Tiles__oep,"Tiles__oep");
-	HX_VISIT_MEMBER_NAME(AssetPaths_obj::bullet__png,"bullet__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::bulletEnemy__png,"bulletEnemy__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::bulletPlayer__png,"bulletPlayer__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::button__png,"button__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::coin__png,"coin__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::health__png,"health__png");
@@ -199,7 +204,8 @@ static ::String AssetPaths_obj_sStaticFields[] = {
 	HX_HCSTRING("room005__oel","\x3c","\xbe","\x59","\x01"),
 	HX_HCSTRING("room006__oel","\x9b","\x1a","\xb5","\x67"),
 	HX_HCSTRING("Tiles__oep","\xf5","\xd7","\xee","\x13"),
-	HX_HCSTRING("bullet__png","\x07","\xbc","\xdd","\x11"),
+	HX_HCSTRING("bulletEnemy__png","\x23","\x23","\xcb","\x4b"),
+	HX_HCSTRING("bulletPlayer__png","\x66","\x7b","\x64","\xbf"),
 	HX_HCSTRING("button__png","\x57","\x0e","\xaf","\xac"),
 	HX_HCSTRING("coin__png","\x58","\x3a","\xfc","\x5b"),
 	HX_HCSTRING("health__png","\x6d","\xdf","\x86","\xa5"),
@@ -288,7 +294,11 @@ HXDLIN(  28)		Tiles__oep = HX_("assets/data/Tiles.oep",f8,6e,eb,d8);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
-HXDLIN(  28)		bullet__png = HX_("assets/images/bullet.png",e8,b3,4c,2c);
+HXDLIN(  28)		bulletEnemy__png = HX_("assets/images/bulletEnemy.png",96,09,fe,9f);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
+HXDLIN(  28)		bulletPlayer__png = HX_("assets/images/bulletPlayer.png",a9,27,50,06);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)

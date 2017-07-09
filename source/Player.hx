@@ -17,6 +17,7 @@ class Player extends FlxSprite
 {
 	public var speed:Float = 200;
 	private var _sndStep:FlxSound;
+	public var bulletDelay:Int;
 
 	public function new(?X:Float=0, ?Y:Float=0)
 	{
@@ -35,6 +36,8 @@ class Player extends FlxSprite
 		drag.x = drag.y = 900;
 		setSize(16, 28); //change hitbox
 		offset.set(8, 4);
+		
+		bulletDelay = 10;
 	}
 
 	override public function update(elapsed:Float):Void

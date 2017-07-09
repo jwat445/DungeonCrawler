@@ -10,7 +10,7 @@ TODO
 
 2. Pathfinding
 
-3. random dungeon name, maybe random player names
+3. generate random dungeon and floor name, maybe random player names
 
 4. replace art
 

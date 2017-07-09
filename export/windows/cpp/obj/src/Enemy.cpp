@@ -43,18 +43,20 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_c595a05c1c7a687d_15_new,"Enemy","new",0x35d4571a,"Enemy.new","Enemy.hx",15,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_32_draw,"Enemy","draw",0xdd65880a,"Enemy.draw","Enemy.hx",32,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_67_idle,"Enemy","idle",0xe0a9031a,"Enemy.idle","Enemy.hx",67,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_72_chase,"Enemy","chase",0x416ec6e8,"Enemy.chase","Enemy.hx",72,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_77_damage,"Enemy","damage",0x65ed79f5,"Enemy.damage","Enemy.hx",77,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_83_update,"Enemy","update",0xcf0e6f8f,"Enemy.update","Enemy.hx",83,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_34_draw,"Enemy","draw",0xdd65880a,"Enemy.draw","Enemy.hx",34,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_69_idle,"Enemy","idle",0xe0a9031a,"Enemy.idle","Enemy.hx",69,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_74_chase,"Enemy","chase",0x416ec6e8,"Enemy.chase","Enemy.hx",74,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_80_shoot,"Enemy","shoot",0x77e2ab19,"Enemy.shoot","Enemy.hx",80,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_84_damage,"Enemy","damage",0x65ed79f5,"Enemy.damage","Enemy.hx",84,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_90_update,"Enemy","update",0xcf0e6f8f,"Enemy.update","Enemy.hx",90,0xbda88996)
 
 void Enemy_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,::String Etype){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
             	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_15_new)
 HXLINE(  22)		this->seesPlayer = false;
-HXLINE(  28)		super::__construct(X,Y,null());
+HXLINE(  29)		super::__construct(X,Y,null());
+HXLINE(  30)		this->bulletDelay = (int)100;
             	}
 
 Dynamic Enemy_obj::__CreateEmpty() { return new Enemy_obj; }
@@ -81,107 +83,115 @@ bool Enemy_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void Enemy_obj::draw(){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_32_draw)
-HXLINE(  33)		bool _hx_tmp;
-HXDLIN(  33)		bool _hx_tmp1;
-HXDLIN(  33)		if ((this->velocity->x == (int)0)) {
-HXLINE(  33)			_hx_tmp1 = (this->velocity->y != (int)0);
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_34_draw)
+HXLINE(  35)		bool _hx_tmp;
+HXDLIN(  35)		bool _hx_tmp1;
+HXDLIN(  35)		if ((this->velocity->x == (int)0)) {
+HXLINE(  35)			_hx_tmp1 = (this->velocity->y != (int)0);
             		}
             		else {
-HXLINE(  33)			_hx_tmp1 = true;
+HXLINE(  35)			_hx_tmp1 = true;
             		}
-HXDLIN(  33)		if (_hx_tmp1) {
-HXLINE(  33)			_hx_tmp = (this->touching == (int)0);
+HXDLIN(  35)		if (_hx_tmp1) {
+HXLINE(  35)			_hx_tmp = (this->touching == (int)0);
             		}
             		else {
-HXLINE(  33)			_hx_tmp = false;
+HXLINE(  35)			_hx_tmp = false;
             		}
-HXDLIN(  33)		if (_hx_tmp) {
-HXLINE(  35)			Float _hx_tmp2 = ::Math_obj::abs(this->velocity->x);
-HXDLIN(  35)			if ((_hx_tmp2 > ::Math_obj::abs(this->velocity->y))) {
-HXLINE(  37)				if ((this->velocity->x < (int)0)) {
-HXLINE(  39)					this->set_facing((int)1);
+HXDLIN(  35)		if (_hx_tmp) {
+HXLINE(  37)			Float _hx_tmp2 = ::Math_obj::abs(this->velocity->x);
+HXDLIN(  37)			if ((_hx_tmp2 > ::Math_obj::abs(this->velocity->y))) {
+HXLINE(  39)				if ((this->velocity->x < (int)0)) {
+HXLINE(  41)					this->set_facing((int)1);
             				}
             				else {
-HXLINE(  43)					this->set_facing((int)16);
+HXLINE(  45)					this->set_facing((int)16);
             				}
             			}
             			else {
-HXLINE(  48)				if ((this->velocity->y < (int)0)) {
-HXLINE(  49)					this->set_facing((int)256);
+HXLINE(  50)				if ((this->velocity->y < (int)0)) {
+HXLINE(  51)					this->set_facing((int)256);
             				}
             				else {
-HXLINE(  51)					this->set_facing((int)4096);
+HXLINE(  53)					this->set_facing((int)4096);
             				}
             			}
-HXLINE(  53)			{
-HXLINE(  53)				int _g = this->facing;
-HXDLIN(  53)				switch((int)(_g)){
+HXLINE(  55)			{
+HXLINE(  55)				int _g = this->facing;
+HXDLIN(  55)				switch((int)(_g)){
             					case (int)1: case (int)16: {
-HXLINE(  56)						this->animation->play(HX_("lr",86,5e,00,00),null(),null(),null());
+HXLINE(  58)						this->animation->play(HX_("lr",86,5e,00,00),null(),null(),null());
             					}
             					break;
             					case (int)256: {
-HXLINE(  58)						this->animation->play(HX_("u",75,00,00,00),null(),null(),null());
+HXLINE(  60)						this->animation->play(HX_("u",75,00,00,00),null(),null(),null());
             					}
             					break;
             					case (int)4096: {
-HXLINE(  60)						this->animation->play(HX_("d",64,00,00,00),null(),null(),null());
+HXLINE(  62)						this->animation->play(HX_("d",64,00,00,00),null(),null(),null());
             					}
             					break;
             				}
             			}
             		}
-HXLINE(  63)		this->super::draw();
+HXLINE(  65)		this->super::draw();
             	}
 
 
 void Enemy_obj::idle(){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_67_idle)
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_69_idle)
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Enemy_obj,idle,(void))
 
 void Enemy_obj::chase(){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_72_chase)
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_74_chase)
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Enemy_obj,chase,(void))
 
+bool Enemy_obj::shoot(){
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_80_shoot)
+HXDLIN(  80)		return false;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Enemy_obj,shoot,return )
+
 void Enemy_obj::damage( ::Bullet bulletRef){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_77_damage)
-HXLINE(  78)		this->hurt(bulletRef->damage);
-HXLINE(  79)		::flixel::effects::FlxFlicker_obj::flicker(hx::ObjectPtr<OBJ_>(this),((Float).1),((Float).1),null(),null(),null(),null());
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_84_damage)
+HXLINE(  85)		this->hurt(bulletRef->damage);
+HXLINE(  86)		::flixel::effects::FlxFlicker_obj::flicker(hx::ObjectPtr<OBJ_>(this),((Float).1),((Float).1),null(),null(),null(),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Enemy_obj,damage,(void))
 
 void Enemy_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_83_update)
-HXLINE(  84)		this->_brain->update();
-HXLINE(  85)		this->super::update(elapsed);
-HXLINE(  87)		if (::flixel::effects::FlxFlicker_obj::isFlickering(hx::ObjectPtr<OBJ_>(this))) {
-HXLINE(  89)			this->set_color((int)-65536);
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_90_update)
+HXLINE(  91)		this->_brain->update();
+HXLINE(  92)		this->super::update(elapsed);
+HXLINE(  94)		if (::flixel::effects::FlxFlicker_obj::isFlickering(hx::ObjectPtr<OBJ_>(this))) {
+HXLINE(  96)			this->set_color((int)-65536);
             		}
             		else {
-HXLINE(  92)			this->set_color((int)-1);
+HXLINE(  99)			this->set_color((int)-1);
             		}
-HXLINE(  95)		bool _hx_tmp;
-HXDLIN(  95)		bool _hx_tmp1;
-HXDLIN(  95)		if ((this->velocity->x == (int)0)) {
-HXLINE(  95)			_hx_tmp1 = (this->velocity->y != (int)0);
-            		}
-            		else {
-HXLINE(  95)			_hx_tmp1 = true;
-            		}
-HXDLIN(  95)		if (_hx_tmp1) {
-HXLINE(  95)			_hx_tmp = (this->touching == (int)0);
+HXLINE( 102)		bool _hx_tmp;
+HXDLIN( 102)		bool _hx_tmp1;
+HXDLIN( 102)		if ((this->velocity->x == (int)0)) {
+HXLINE( 102)			_hx_tmp1 = (this->velocity->y != (int)0);
             		}
             		else {
-HXLINE(  95)			_hx_tmp = false;
+HXLINE( 102)			_hx_tmp1 = true;
+            		}
+HXDLIN( 102)		if (_hx_tmp1) {
+HXLINE( 102)			_hx_tmp = (this->touching == (int)0);
+            		}
+            		else {
+HXLINE( 102)			_hx_tmp = false;
             		}
             	}
 
@@ -215,6 +225,7 @@ void Enemy_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(seesPlayer,"seesPlayer");
 	HX_MARK_MEMBER_NAME(playerPos,"playerPos");
 	HX_MARK_MEMBER_NAME(_sndStep,"_sndStep");
+	HX_MARK_MEMBER_NAME(bulletDelay,"bulletDelay");
 	 ::flixel::FlxSprite_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -229,6 +240,7 @@ void Enemy_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(seesPlayer,"seesPlayer");
 	HX_VISIT_MEMBER_NAME(playerPos,"playerPos");
 	HX_VISIT_MEMBER_NAME(_sndStep,"_sndStep");
+	HX_VISIT_MEMBER_NAME(bulletDelay,"bulletDelay");
 	 ::flixel::FlxSprite_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -242,6 +254,7 @@ hx::Val Enemy_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 	case 5:
 		if (HX_FIELD_EQ(inName,"speed") ) { return hx::Val( speed ); }
 		if (HX_FIELD_EQ(inName,"chase") ) { return hx::Val( chase_dyn() ); }
+		if (HX_FIELD_EQ(inName,"shoot") ) { return hx::Val( shoot_dyn() ); }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"_brain") ) { return hx::Val( _brain ); }
@@ -261,6 +274,9 @@ hx::Val Enemy_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"seesPlayer") ) { return hx::Val( seesPlayer ); }
+		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"bulletDelay") ) { return hx::Val( bulletDelay ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -287,6 +303,9 @@ hx::Val Enemy_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"seesPlayer") ) { seesPlayer=inValue.Cast< bool >(); return inValue; }
+		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"bulletDelay") ) { bulletDelay=inValue.Cast< int >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -301,6 +320,7 @@ void Enemy_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("seesPlayer","\x01","\x05","\x0b","\x46"));
 	outFields->push(HX_HCSTRING("playerPos","\xb3","\xbc","\xc6","\x00"));
 	outFields->push(HX_HCSTRING("_sndStep","\xd6","\x78","\x65","\xae"));
+	outFields->push(HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a"));
 	super::__GetFields(outFields);
 };
 
@@ -314,6 +334,7 @@ static hx::StorageInfo Enemy_obj_sMemberStorageInfo[] = {
 	{hx::fsBool,(int)offsetof(Enemy_obj,seesPlayer),HX_HCSTRING("seesPlayer","\x01","\x05","\x0b","\x46")},
 	{hx::fsObject /*::flixel::math::FlxPoint*/ ,(int)offsetof(Enemy_obj,playerPos),HX_HCSTRING("playerPos","\xb3","\xbc","\xc6","\x00")},
 	{hx::fsObject /*::flixel::_hx_system::FlxSound*/ ,(int)offsetof(Enemy_obj,_sndStep),HX_HCSTRING("_sndStep","\xd6","\x78","\x65","\xae")},
+	{hx::fsInt,(int)offsetof(Enemy_obj,bulletDelay),HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *Enemy_obj_sStaticStorageInfo = 0;
@@ -328,9 +349,11 @@ static ::String Enemy_obj_sMemberFields[] = {
 	HX_HCSTRING("seesPlayer","\x01","\x05","\x0b","\x46"),
 	HX_HCSTRING("playerPos","\xb3","\xbc","\xc6","\x00"),
 	HX_HCSTRING("_sndStep","\xd6","\x78","\x65","\xae"),
+	HX_HCSTRING("bulletDelay","\xe1","\x45","\x00","\x8a"),
 	HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"),
 	HX_HCSTRING("idle","\x14","\xa7","\xb3","\x45"),
 	HX_HCSTRING("chase","\xae","\x9d","\xb3","\x45"),
+	HX_HCSTRING("shoot","\xdf","\x81","\x27","\x7c"),
 	HX_HCSTRING("damage","\x6f","\x90","\xe4","\x1d"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
 	::String(null()) };

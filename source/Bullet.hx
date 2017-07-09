@@ -13,9 +13,9 @@ class Bullet extends FlxSprite
 	public var direction:Int = 1;
 	public var damage:Int = 10;
 
-	public function init(_player:Player)
+	public function initPlayer(_player:Player)
 	{
-		loadGraphic(AssetPaths.bullet__png, false, 16, 16, true);
+		loadGraphic(AssetPaths.bulletPlayer__png, false, 16, 16, true);
 		facing = _player.facing;
 		x = _player.x;
 		y = _player.y;
@@ -32,6 +32,19 @@ class Bullet extends FlxSprite
 			velocity.y +=  _player.velocity.y/4;
 			y += ((facing == FlxObject.UP) ? -6 : 6);
 		}
+	}
+	
+	public function initEnemy(enemy:Enemy)
+	{
+		loadGraphic(AssetPaths.bulletEnemy__png, false, 16, 16, true);
+		facing = enemy.facing;
+		x = enemy.x;
+		y = enemy.y;
+		
+		velocity.x = 10;
+		velocity.x +=  enemy.velocity.x/4;
+		velocity.y = 0;
+		velocity.y +=  enemy.velocity.y/4;
 	}
 
 }

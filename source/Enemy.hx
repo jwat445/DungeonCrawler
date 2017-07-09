@@ -22,10 +22,12 @@ class Enemy extends FlxSprite
 	public var seesPlayer:Bool = false;
 	public var playerPos(default, null):FlxPoint;
 	private var _sndStep:FlxSound;
+	public var bulletDelay:Int;
 
 	public function new(X:Float = 0, Y:Float=0, Etype:String)
 	{
 		super(X, Y);
+		bulletDelay = 100;
 	}
 
 	override public function draw():Void
@@ -71,6 +73,11 @@ class Enemy extends FlxSprite
 	public function chase():Void
 	{
 		
+	}
+	
+	public function shoot():Bool
+	{
+		return false;
 	}
 
 	public function damage(bulletRef:Bullet):Void
