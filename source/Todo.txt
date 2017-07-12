@@ -1,4 +1,7 @@
 TODO
+
+Priority: get enemy to shoot at player and only when whithin a certain range
+
 1. Random Map Generation
  - make enemy positions in ogmo POTENTIAL positsions, then depending on where the player comes in from, dont spawn the close enemies
  - add parts to rooms (

@@ -33,7 +33,7 @@ class EnemyWalker extends Enemy
 				height = 12;
 			case "big":
 				loadGraphic("assets/images/walker-" + variant + ".png", true, 48, 48);
-				health = 100;
+				health = 85;
 				speed = 65;
 				width = 24;
 				height = 32;

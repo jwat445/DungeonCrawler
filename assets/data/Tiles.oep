@@ -16,7 +16,7 @@
     <Width>1088</Width>
     <Height>704</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Joshua\Documents\DungeonGame\assets\data\Tiles.oep</Filename>
+  <Filename>C:\Users\Joshua\Documents\DungeonCrawler\assets\data\Tiles.oep</Filename>
   <AngleMode>Degrees</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -104,7 +104,7 @@
         <Y>0</Y>
       </Origin>
       <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
-        <RectColor A="255" R="128" G="64" B="64" />
+        <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions>
         <ValueDefinition xsi:type="StringValueDefinition" Name="etype" Default="random" MaxChars="-1" MultiLine="false" />

@@ -34,7 +34,7 @@ class MenuState extends FlxState
 
 		if (FlxG.sound.music == null) // don't restart the music if it's already playing
 		{
-			//FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+			FlxG.sound.playMusic(AssetPaths.menu__wav, 1, true);
 		}
 	}
 

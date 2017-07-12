@@ -41,7 +41,7 @@ class Bullet extends FlxSprite
 		x = enemy.x;
 		y = enemy.y;
 		
-		velocity.x = 10;
+		velocity.x = 30;
 		velocity.x +=  enemy.velocity.x/4;
 		velocity.y = 0;
 		velocity.y +=  enemy.velocity.y/4;

@@ -57,6 +57,7 @@ class PlayState extends FlxState
 		buildMap();
 		setup(floorMap[floorX][floorY], 0);
 		FlxG.camera.follow(player, TOPDOWN, 1);
+		FlxG.sound.music.stop();
 		sndHurt = FlxG.sound.load(AssetPaths.hurt__wav);
 		super.create();
 	}
@@ -164,7 +165,7 @@ class PlayState extends FlxState
 			{
 				case "walker":
 					grpEnemies.add(new EnemyWalker(x + 8, y, entityData.get("variant")));
-				case "head":
+				case "spitter":
 					grpEnemies.add(new EnemySpitter(x + 8, y, entityData.get("variant")));
 				default:
 					//random
@@ -333,6 +334,7 @@ class PlayState extends FlxState
 	
 	public function enemyShoot(enemyRef:Enemy):Void
 	{
+		//place code that has to do with anything all enemies need to do when shooting. If it is an enemy specific thing, add it to their shoot function
 		enemyRef.bulletDelay = 30;
 		var bullet = grpEnemyBullets.recycle(Bullet);
 		bullet.initEnemy(enemyRef);
