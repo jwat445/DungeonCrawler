@@ -11,7 +11,8 @@ Priority: get enemy to shoot at player and only when whithin a certain range
 	- it must choose from a list of rooms based on their attributes
  - randomly genreate rooms when a new map is created
 
-2. Pathfinding
+2. Pathfinding- split movement into x and y. If hitting an obstacle, find which direction it is blocking from (x or y axis), then move a step in the other axis. 
+	ex. if moving down and left and hit an obstaccle, find somthing blocking from bottom, then move left only and check each frame if you can start moving left and down again.
 
 3. generate random dungeon and floor name, maybe random player names
 
