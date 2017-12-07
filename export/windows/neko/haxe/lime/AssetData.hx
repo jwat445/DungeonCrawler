@@ -62,8 +62,6 @@ class AssetData {
 			type.set ("assets/images/walker-default.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/walker-strong.png", "assets/images/walker-strong.png");
 			type.set ("assets/images/walker-strong.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/music/menu.wav", "assets/music/menu.wav");
-			type.set ("assets/music/menu.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 			type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sounds/coin.wav", "assets/sounds/coin.wav");

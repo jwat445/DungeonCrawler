@@ -14,6 +14,7 @@ import flixel.effects.FlxFlicker;
  */
 class Enemy extends FlxSprite
 {
+	
 	public var speed:Float;
 	public var variant(default, null):String;
 	private var _brain:FSM;
@@ -28,7 +29,7 @@ class Enemy extends FlxSprite
 	public function new(X:Float = 0, Y:Float=0, Etype:String)
 	{
 		super(X, Y);
-		bulletDelay = 200;
+		bulletDelay = 50; //amount of time before any enemy starts shooting at player. Time between shots should be defined using this varialbe but in the specific enemy class.
 	}
 
 	override public function draw():Void

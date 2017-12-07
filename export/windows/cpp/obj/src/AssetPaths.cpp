@@ -60,6 +60,8 @@ bool AssetPaths_obj::_hx_isInstanceOf(int inClassId) {
 
 ::String AssetPaths_obj::rock__png;
 
+::String AssetPaths_obj::spitter_default__png;
+
 ::String AssetPaths_obj::tiles__png;
 
 ::String AssetPaths_obj::walker_big__png;
@@ -68,9 +70,13 @@ bool AssetPaths_obj::_hx_isInstanceOf(int inClassId) {
 
 ::String AssetPaths_obj::walker_strong__png;
 
+::String AssetPaths_obj::menu__wav;
+
 ::String AssetPaths_obj::music_goes_here__txt;
 
 ::String AssetPaths_obj::coin__wav;
+
+::String AssetPaths_obj::enemy_shoot__wav;
 
 ::String AssetPaths_obj::hurt__wav;
 
@@ -108,12 +114,15 @@ static hx::StaticInfo AssetPaths_obj_sStaticStorageInfo[] = {
 	{hx::fsString,(void *) &AssetPaths_obj::images_go_here__txt,HX_HCSTRING("images_go_here__txt","\x70","\x18","\x1f","\x93")},
 	{hx::fsString,(void *) &AssetPaths_obj::player__png,HX_HCSTRING("player__png","\x88","\xf2","\xe2","\x65")},
 	{hx::fsString,(void *) &AssetPaths_obj::rock__png,HX_HCSTRING("rock__png","\xc4","\x83","\x8e","\x8b")},
+	{hx::fsString,(void *) &AssetPaths_obj::spitter_default__png,HX_HCSTRING("spitter_default__png","\x4e","\xd7","\x7c","\xc7")},
 	{hx::fsString,(void *) &AssetPaths_obj::tiles__png,HX_HCSTRING("tiles__png","\xe4","\x9d","\x3e","\x1d")},
 	{hx::fsString,(void *) &AssetPaths_obj::walker_big__png,HX_HCSTRING("walker_big__png","\xb2","\x93","\xec","\xc1")},
 	{hx::fsString,(void *) &AssetPaths_obj::walker_default__png,HX_HCSTRING("walker_default__png","\x91","\xf8","\x32","\x40")},
 	{hx::fsString,(void *) &AssetPaths_obj::walker_strong__png,HX_HCSTRING("walker_strong__png","\x89","\xdc","\xac","\x7d")},
+	{hx::fsString,(void *) &AssetPaths_obj::menu__wav,HX_HCSTRING("menu__wav","\x0d","\xfc","\xe1","\xf9")},
 	{hx::fsString,(void *) &AssetPaths_obj::music_goes_here__txt,HX_HCSTRING("music_goes_here__txt","\xd1","\xaa","\xc8","\x0f")},
 	{hx::fsString,(void *) &AssetPaths_obj::coin__wav,HX_HCSTRING("coin__wav","\xdb","\x7e","\x01","\x5c")},
+	{hx::fsString,(void *) &AssetPaths_obj::enemy_shoot__wav,HX_HCSTRING("enemy_shoot__wav","\xa4","\x27","\x4c","\x3d")},
 	{hx::fsString,(void *) &AssetPaths_obj::hurt__wav,HX_HCSTRING("hurt__wav","\x9d","\x8f","\x4c","\xae")},
 	{hx::fsString,(void *) &AssetPaths_obj::select__wav,HX_HCSTRING("select__wav","\x90","\x95","\x74","\xb8")},
 	{hx::fsString,(void *) &AssetPaths_obj::sounds_go_here__txt,HX_HCSTRING("sounds_go_here__txt","\xe4","\xa8","\xcb","\x02")},
@@ -143,12 +152,15 @@ static void AssetPaths_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::images_go_here__txt,"images_go_here__txt");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::player__png,"player__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::rock__png,"rock__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::spitter_default__png,"spitter_default__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::tiles__png,"tiles__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::walker_big__png,"walker_big__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::walker_default__png,"walker_default__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::walker_strong__png,"walker_strong__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::menu__wav,"menu__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::music_goes_here__txt,"music_goes_here__txt");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::coin__wav,"coin__wav");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::enemy_shoot__wav,"enemy_shoot__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::hurt__wav,"hurt__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::select__wav,"select__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::sounds_go_here__txt,"sounds_go_here__txt");
@@ -177,12 +189,15 @@ static void AssetPaths_obj_sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::images_go_here__txt,"images_go_here__txt");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::player__png,"player__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::rock__png,"rock__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::spitter_default__png,"spitter_default__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::tiles__png,"tiles__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::walker_big__png,"walker_big__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::walker_default__png,"walker_default__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::walker_strong__png,"walker_strong__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::menu__wav,"menu__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::music_goes_here__txt,"music_goes_here__txt");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::coin__wav,"coin__wav");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::enemy_shoot__wav,"enemy_shoot__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::hurt__wav,"hurt__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::select__wav,"select__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::sounds_go_here__txt,"sounds_go_here__txt");
@@ -213,12 +228,15 @@ static ::String AssetPaths_obj_sStaticFields[] = {
 	HX_HCSTRING("images_go_here__txt","\x70","\x18","\x1f","\x93"),
 	HX_HCSTRING("player__png","\x88","\xf2","\xe2","\x65"),
 	HX_HCSTRING("rock__png","\xc4","\x83","\x8e","\x8b"),
+	HX_HCSTRING("spitter_default__png","\x4e","\xd7","\x7c","\xc7"),
 	HX_HCSTRING("tiles__png","\xe4","\x9d","\x3e","\x1d"),
 	HX_HCSTRING("walker_big__png","\xb2","\x93","\xec","\xc1"),
 	HX_HCSTRING("walker_default__png","\x91","\xf8","\x32","\x40"),
 	HX_HCSTRING("walker_strong__png","\x89","\xdc","\xac","\x7d"),
+	HX_HCSTRING("menu__wav","\x0d","\xfc","\xe1","\xf9"),
 	HX_HCSTRING("music_goes_here__txt","\xd1","\xaa","\xc8","\x0f"),
 	HX_HCSTRING("coin__wav","\xdb","\x7e","\x01","\x5c"),
+	HX_HCSTRING("enemy_shoot__wav","\xa4","\x27","\x4c","\x3d"),
 	HX_HCSTRING("hurt__wav","\x9d","\x8f","\x4c","\xae"),
 	HX_HCSTRING("select__wav","\x90","\x95","\x74","\xb8"),
 	HX_HCSTRING("sounds_go_here__txt","\xe4","\xa8","\xcb","\x02"),
@@ -330,6 +348,10 @@ HXDLIN(  28)		rock__png = HX_("assets/images/rock.png",0b,b2,62,8e);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
+HXDLIN(  28)		spitter_default__png = HX_("assets/images/spitter-default.png",3d,d9,ca,d6);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
 HXDLIN(  28)		tiles__png = HX_("assets/images/tiles.png",35,bc,d1,f5);
             	}
 {
@@ -346,11 +368,19 @@ HXDLIN(  28)		walker_strong__png = HX_("assets/images/walker-strong.png",7e,63,a
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
+HXDLIN(  28)		menu__wav = HX_("assets/music/menu.wav",13,44,3a,fd);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
 HXDLIN(  28)		music_goes_here__txt = HX_("assets/music/music-goes-here.txt",6b,32,60,47);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
 HXDLIN(  28)		coin__wav = HX_("assets/sounds/coin.wav",ee,74,61,6a);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)
+HXDLIN(  28)		enemy_shoot__wav = HX_("assets/sounds/enemy_shoot.wav",e7,47,f2,eb);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_28_boot)

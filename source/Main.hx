@@ -14,7 +14,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(608, 480, MenuState));
+		addChild(new FlxGame(608, 480, MenuState, 1, 60, 60, true, false));
 
 		var _save:FlxSave = new FlxSave();
 		_save.bind("DungeonGame");

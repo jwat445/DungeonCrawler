@@ -14,13 +14,13 @@
 #include <openfl/_legacy/text/FontType.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_fb0a5c0944376249_554_new,"__ASSET__flixel_fonts_monsterrat_ttf","new",0x5ab5a7f2,"__ASSET__flixel_fonts_monsterrat_ttf.new","DefaultAssetLibrary.hx",554,0x0fc48912)
+HX_DEFINE_STACK_FRAME(_hx_pos_fb0a5c0944376249_560_new,"__ASSET__flixel_fonts_monsterrat_ttf","new",0x5ab5a7f2,"__ASSET__flixel_fonts_monsterrat_ttf.new","DefaultAssetLibrary.hx",560,0x0fc48912)
 HX_LOCAL_STACK_FRAME(_hx_pos_314d9a65f36e71ec_1_boot,"__ASSET__flixel_fonts_monsterrat_ttf","boot",0xfc564c60,"__ASSET__flixel_fonts_monsterrat_ttf.boot","?",1,0x0000003f)
 
 void __ASSET__flixel_fonts_monsterrat_ttf_obj::__construct(::String __o_filename, ::openfl::_legacy::text::FontStyle style, ::openfl::_legacy::text::FontType type){
 ::String filename = __o_filename.Default(HX_HCSTRING("","\x00","\x00","\x00","\x00"));
-            	HX_STACKFRAME(&_hx_pos_fb0a5c0944376249_554_new)
-HXDLIN( 554)		super::__construct(filename,style,type);
+            	HX_STACKFRAME(&_hx_pos_fb0a5c0944376249_560_new)
+HXDLIN( 560)		super::__construct(filename,style,type);
             	}
 
 Dynamic __ASSET__flixel_fonts_monsterrat_ttf_obj::__CreateEmpty() { return new __ASSET__flixel_fonts_monsterrat_ttf_obj; }

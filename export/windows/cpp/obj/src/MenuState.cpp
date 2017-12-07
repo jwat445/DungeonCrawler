@@ -143,7 +143,9 @@ HXDLIN(  31)		int _hx_tmp7 = ::flixel::FlxG_obj::height;
 HXDLIN(  31)		_hx_tmp6->set_y(((_hx_tmp7 - this->_btnOptions->get_height()) - (int)10));
 HXLINE(  32)		this->add(this->_btnOptions);
 HXLINE(  33)		this->_btnOptions->onUp->sound = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/select.wav",99,31,ec,2e),null(),null(),null(),null(),null(),null(),null());
-HXLINE(  35)		bool _hx_tmp8 = hx::IsNull( ::flixel::FlxG_obj::sound->music );
+HXLINE(  35)		if (hx::IsNull( ::flixel::FlxG_obj::sound->music )) {
+HXLINE(  37)			::flixel::FlxG_obj::sound->playMusic(HX_("assets/music/menu.wav",13,44,3a,fd),(int)1,true,null());
+            		}
             	}
 
 

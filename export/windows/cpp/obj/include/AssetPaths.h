@@ -67,12 +67,15 @@ class HXCPP_CLASS_ATTRIBUTES AssetPaths_obj : public hx::Object
 		static ::String images_go_here__txt;
 		static ::String player__png;
 		static ::String rock__png;
+		static ::String spitter_default__png;
 		static ::String tiles__png;
 		static ::String walker_big__png;
 		static ::String walker_default__png;
 		static ::String walker_strong__png;
+		static ::String menu__wav;
 		static ::String music_goes_here__txt;
 		static ::String coin__wav;
+		static ::String enemy_shoot__wav;
 		static ::String hurt__wav;
 		static ::String select__wav;
 		static ::String sounds_go_here__txt;

@@ -96,7 +96,7 @@ HXLINE(  26)			::String _g = this->variant;
 HXDLIN(  26)			::String _hx_switch_0 = _g;
             			if (  (_hx_switch_0==HX_("big",c0,b8,4a,00)) ){
 HXLINE(  35)				this->loadGraphic(((HX_("assets/images/walker-",6c,89,53,85) + this->variant) + HX_(".png",3b,2d,bd,1e)),true,(int)48,(int)48,null(),null());
-HXLINE(  36)				this->health = (int)100;
+HXLINE(  36)				this->health = (int)85;
 HXLINE(  37)				this->speed = (int)65;
 HXLINE(  38)				this->set_width((int)24);
 HXLINE(  39)				this->set_height((int)32);

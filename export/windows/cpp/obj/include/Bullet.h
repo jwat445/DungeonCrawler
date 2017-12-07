@@ -52,10 +52,10 @@ class HXCPP_CLASS_ATTRIBUTES Bullet_obj : public  ::flixel::FlxSprite_obj
 		Float speed;
 		int direction;
 		int damage;
-		void initPlayer( ::Player _player);
+		void initPlayer( ::Player player);
 		::Dynamic initPlayer_dyn();
 
-		void initEnemy( ::Enemy enemy);
+		void initEnemy( ::Enemy enemy, ::Player player);
 		::Dynamic initEnemy_dyn();
 
 };

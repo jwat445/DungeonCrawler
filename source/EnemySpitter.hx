@@ -15,7 +15,7 @@ import flixel.effects.FlxFlicker;
  */
 class EnemySpitter extends Enemy
 {
-
+	aw
 	override public function new(X:Float = 0, Y:Float=0, Etype:String)
 	{
 		super(X, Y, Etype);
@@ -23,13 +23,16 @@ class EnemySpitter extends Enemy
 		loadGraphic("assets/images/spitter-" + variant + ".png", true, 32, 32);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
+		animation.add("d", [0], 6, false);
+		animation.add("lr", [0], 6, false);
+		animation.add("u", [0], 6, false);
 		animation.add("shoot", [0, 2, 3, 4, 5], 6, false);
 
 		_sndStep = FlxG.sound.load(AssetPaths.step_1__wav, .2);
 		_sndShoot = FlxG.sound.load(AssetPaths.enemy_shoot__wav, .2);
 		_sndStep.proximity(x, y, FlxG.camera.target, FlxG.width * .4);
 
-		drag.x = drag.y = 10;
+		drag.x = drag.y = 1000;
 		width = 16;
 		height = 24;
 		offset.x = 8;
@@ -49,13 +52,16 @@ class EnemySpitter extends Enemy
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
+		
 	}
 
 	override public function shoot():Bool
 	{
-		if (seesPlayer)
+		if (seesPlayer && bulletDelay < 0)
 		{
+			animation.play("shoot");
 			_sndShoot.play();
+			bulletDelay = 100;
 			return true;
 		}
 		else

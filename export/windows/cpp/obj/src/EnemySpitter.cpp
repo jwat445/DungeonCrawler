@@ -55,78 +55,67 @@
 #ifndef INCLUDED_haxe_IMap
 #include <haxe/IMap.h>
 #endif
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
-#endif
 #ifndef INCLUDED_haxe_ds_IntMap
 #include <haxe/ds/IntMap.h>
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_7819db3967a993f1_20_new,"EnemySpitter","new",0x9dabe143,"EnemySpitter.new","EnemySpitter.hx",20,0xfe69378d)
 static const int _hx_array_data_d4b383d1_2[] = {
-	(int)0,(int)1,(int)0,(int)2,
+	(int)0,(int)2,(int)3,(int)4,(int)5,
 };
-static const int _hx_array_data_d4b383d1_3[] = {
-	(int)3,(int)4,(int)3,(int)5,
-};
-static const int _hx_array_data_d4b383d1_4[] = {
-	(int)6,(int)7,(int)6,(int)8,
-};
-HX_LOCAL_STACK_FRAME(_hx_pos_7819db3967a993f1_58_shoot,"EnemySpitter","shoot",0x2c4fd182,"EnemySpitter.shoot","EnemySpitter.hx",58,0xfe69378d)
+HX_LOCAL_STACK_FRAME(_hx_pos_7819db3967a993f1_57_shoot,"EnemySpitter","shoot",0x2c4fd182,"EnemySpitter.shoot","EnemySpitter.hx",57,0xfe69378d)
 
 void EnemySpitter_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,::String Etype){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
             	HX_GC_STACKFRAME(&_hx_pos_7819db3967a993f1_20_new)
-HXLINE(  21)		::haxe::Log_obj::trace(HX_("you tried loading a SPITTER!!!!",3f,78,f2,72),hx::SourceInfo(HX_("EnemySpitter.hx",8d,37,69,fe),21,HX_("EnemySpitter",d1,83,b3,d4),HX_("new",60,d0,53,00)));
-HXLINE(  22)		super::__construct(X,Y,Etype);
-HXLINE(  23)		this->variant = Etype;
-HXLINE(  24)		this->loadGraphic(((HX_("assets/images/spitter-",9f,97,26,b4) + this->variant) + HX_(".png",3b,2d,bd,1e)),true,(int)32,(int)32,null(),null());
-HXLINE(  25)		::haxe::IMap_obj::set(this->_facingFlip,(int)1, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE(  21)		super::__construct(X,Y,Etype);
+HXLINE(  22)		this->variant = Etype;
+HXLINE(  23)		this->loadGraphic(((HX_("assets/images/spitter-",9f,97,26,b4) + this->variant) + HX_(".png",3b,2d,bd,1e)),true,(int)32,(int)32,null(),null());
+HXLINE(  24)		::haxe::IMap_obj::set(this->_facingFlip,(int)1, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("x",78,00,00,00),false)
             			->setFixed(1,HX_("y",79,00,00,00),false)));
-HXLINE(  26)		::haxe::IMap_obj::set(this->_facingFlip,(int)16, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE(  25)		::haxe::IMap_obj::set(this->_facingFlip,(int)16, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("x",78,00,00,00),true)
             			->setFixed(1,HX_("y",79,00,00,00),false)));
-HXLINE(  27)		this->animation->add(HX_("d",64,00,00,00),::Array_obj< int >::fromData( _hx_array_data_d4b383d1_2,4),(int)6,false,null(),null());
-HXLINE(  28)		this->animation->add(HX_("lr",86,5e,00,00),::Array_obj< int >::fromData( _hx_array_data_d4b383d1_3,4),(int)6,false,null(),null());
-HXLINE(  29)		this->animation->add(HX_("u",75,00,00,00),::Array_obj< int >::fromData( _hx_array_data_d4b383d1_4,4),(int)6,false,null(),null());
-HXLINE(  31)		this->_sndStep = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/step_1.wav",db,04,d6,96),((Float).2),null(),null(),null(),null(),null(),null());
-HXLINE(  32)		 ::flixel::_hx_system::FlxSound _hx_tmp = this->_sndStep;
-HXDLIN(  32)		Float _hx_tmp1 = this->x;
-HXDLIN(  32)		Float _hx_tmp2 = this->y;
-HXDLIN(  32)		 ::flixel::FlxObject _hx_tmp3 = ::flixel::FlxG_obj::camera->target;
-HXDLIN(  32)		_hx_tmp->proximity(_hx_tmp1,_hx_tmp2,_hx_tmp3,(::flixel::FlxG_obj::width * ((Float).4)),null());
-HXLINE(  34)		 ::flixel::math::FlxPoint _hx_tmp4 = this->drag;
-HXDLIN(  34)		_hx_tmp4->set_x(this->drag->set_y((int)10));
-HXLINE(  35)		this->set_width((int)16);
-HXLINE(  36)		this->set_height((int)24);
-HXLINE(  37)		this->offset->set_x((int)8);
-HXLINE(  38)		this->offset->set_y((int)4);
-HXLINE(  39)		{
-HXLINE(  39)			::String _g = this->variant;
-HXDLIN(  39)			::String _hx_switch_0 = _g;
+HXLINE(  26)		this->animation->add(HX_("shoot",df,81,27,7c),::Array_obj< int >::fromData( _hx_array_data_d4b383d1_2,5),(int)6,false,null(),null());
+HXLINE(  28)		this->_sndStep = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/step_1.wav",db,04,d6,96),((Float).2),null(),null(),null(),null(),null(),null());
+HXLINE(  29)		this->_sndShoot = ::flixel::FlxG_obj::sound->load(HX_("assets/sounds/enemy_shoot.wav",e7,47,f2,eb),((Float).2),null(),null(),null(),null(),null(),null());
+HXLINE(  30)		 ::flixel::_hx_system::FlxSound _hx_tmp = this->_sndStep;
+HXDLIN(  30)		Float _hx_tmp1 = this->x;
+HXDLIN(  30)		Float _hx_tmp2 = this->y;
+HXDLIN(  30)		 ::flixel::FlxObject _hx_tmp3 = ::flixel::FlxG_obj::camera->target;
+HXDLIN(  30)		_hx_tmp->proximity(_hx_tmp1,_hx_tmp2,_hx_tmp3,(::flixel::FlxG_obj::width * ((Float).4)),null());
+HXLINE(  32)		 ::flixel::math::FlxPoint _hx_tmp4 = this->drag;
+HXDLIN(  32)		_hx_tmp4->set_x(this->drag->set_y((int)1000));
+HXLINE(  33)		this->set_width((int)16);
+HXLINE(  34)		this->set_height((int)24);
+HXLINE(  35)		this->offset->set_x((int)8);
+HXLINE(  36)		this->offset->set_y((int)4);
+HXLINE(  37)		{
+HXLINE(  37)			::String _g = this->variant;
+HXDLIN(  37)			::String _hx_switch_0 = _g;
             			if (  (_hx_switch_0==HX_("big",c0,b8,4a,00)) ){
-HXLINE(  45)				this->health = (int)100;
-HXLINE(  46)				this->speed = (int)60;
-HXLINE(  44)				goto _hx_goto_0;
+HXLINE(  43)				this->health = (int)100;
+HXLINE(  44)				this->speed = (int)60;
+HXLINE(  42)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==HX_("small",c7,f0,6a,7f)) ){
-HXLINE(  42)				this->health = (int)25;
-HXLINE(  43)				this->speed = (int)150;
-HXLINE(  41)				goto _hx_goto_0;
+HXLINE(  40)				this->health = (int)25;
+HXLINE(  41)				this->speed = (int)150;
+HXLINE(  39)				goto _hx_goto_0;
             			}
             			/* default */{
-HXLINE(  48)				this->health = (int)50;
-HXLINE(  49)				this->speed = (int)100;
+HXLINE(  46)				this->health = (int)50;
+HXLINE(  47)				this->speed = (int)100;
             			}
             			_hx_goto_0:;
             		}
-HXLINE(  51)		this->_brain =  ::FSM_obj::__alloc( HX_CTX ,this->idle_dyn());
-HXLINE(  52)		this->_idleTmr = (int)0;
-HXLINE(  53)		 ::flixel::math::FlxPoint point = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN(  53)		point->_inPool = false;
-HXDLIN(  53)		this->playerPos = point;
+HXLINE(  49)		this->_brain =  ::FSM_obj::__alloc( HX_CTX ,this->idle_dyn());
+HXLINE(  50)		this->_idleTmr = (int)0;
+HXLINE(  51)		 ::flixel::math::FlxPoint point = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
+HXDLIN(  51)		point->_inPool = false;
+HXDLIN(  51)		this->playerPos = point;
             	}
 
 Dynamic EnemySpitter_obj::__CreateEmpty() { return new EnemySpitter_obj; }
@@ -157,14 +146,23 @@ bool EnemySpitter_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 bool EnemySpitter_obj::shoot(){
-            	HX_STACKFRAME(&_hx_pos_7819db3967a993f1_58_shoot)
-HXDLIN(  58)		if (this->seesPlayer) {
-HXLINE(  60)			return true;
+            	HX_STACKFRAME(&_hx_pos_7819db3967a993f1_57_shoot)
+HXDLIN(  57)		bool _hx_tmp;
+HXDLIN(  57)		if (this->seesPlayer) {
+HXDLIN(  57)			_hx_tmp = (this->bulletDelay < (int)0);
+            		}
+            		else {
+HXDLIN(  57)			_hx_tmp = false;
+            		}
+HXDLIN(  57)		if (_hx_tmp) {
+HXLINE(  59)			this->_sndShoot->play(null(),null(),null());
+HXLINE(  60)			this->bulletDelay = (int)50;
+HXLINE(  61)			return true;
             		}
             		else {
 HXLINE(  65)			return false;
             		}
-HXLINE(  58)		return false;
+HXLINE(  57)		return false;
             	}
 
 

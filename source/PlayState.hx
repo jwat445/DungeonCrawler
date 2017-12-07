@@ -57,7 +57,7 @@ class PlayState extends FlxState
 		buildMap();
 		setup(floorMap[floorX][floorY], 0);
 		FlxG.camera.follow(player, TOPDOWN, 1);
-		FlxG.sound.music.stop();
+		//FlxG.sound.music.stop();
 		sndHurt = FlxG.sound.load(AssetPaths.hurt__wav);
 		super.create();
 	}
@@ -176,6 +176,7 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		
 		if (grpEnemies.countLiving() <= 0)
 		{
 			roomClear = true;
@@ -191,8 +192,11 @@ class PlayState extends FlxState
 		
 		//check if each enemy can shoot
 		for (enemy in grpEnemies) {
+			if (enemy.health <= 0) {
+				grpEnemies.remove(enemy);
+			}
 			enemy.bulletDelay --;
-			if ((enemy.shoot()) && enemy.bulletDelay < 0)
+			if (enemy.shoot())
 			{
 				enemyShoot(enemy);
 			}
@@ -235,11 +239,11 @@ class PlayState extends FlxState
 		//check for bullet collisions
 		FlxG.collide(grpPlayerBullets, grpEnemies, bulletHitEnemy);
 		FlxG.collide(grpPlayerBullets, mWalls, bulletHitMap);
-		FlxG.collide(grpPlayerBullets, grpObstacles, bulletHitMap);
+		FlxG.collide(grpPlayerBullets, grpObstacles, bulletHitObstacle);
 		
 		FlxG.collide(grpEnemyBullets, player, bulletHitPlayer);
 		FlxG.collide(grpEnemyBullets, mWalls, bulletHitMap);
-		FlxG.collide(grpEnemyBullets, grpObstacles, bulletHitMap);
+		FlxG.collide(grpEnemyBullets, grpObstacles, bulletHitObstacle);
 	}
 
 	private function playerTouchCoin(P:Player, C:Coin):Void
@@ -254,7 +258,7 @@ class PlayState extends FlxState
 
 	private function checkEnemyVision(e:Enemy):Void
 	{
-		if (mWalls.ray(e.getMidpoint(), player.getMidpoint()))
+		if (mWalls.ray(e.getMidpoint(), player.getMidpoint())) //grpObstacles.ray(e.getMidpoint(), player.getMidpoint() build a ray like function for obstacles COPYPASTE???
 		{
 			e.seesPlayer = true;
 			e.playerPos.copyFrom(player.getMidpoint());
@@ -329,18 +333,23 @@ class PlayState extends FlxState
 	{
 		player.bulletDelay = 30;
 		var bullet = grpPlayerBullets.recycle(Bullet);
-		bullet.initPlayer(player);
+		bullet.initPlayer(player, 350);
 	}
 	
 	public function enemyShoot(enemyRef:Enemy):Void
 	{
 		//place code that has to do with anything all enemies need to do when shooting. If it is an enemy specific thing, add it to their shoot function
-		enemyRef.bulletDelay = 30;
 		var bullet = grpEnemyBullets.recycle(Bullet);
-		bullet.initEnemy(enemyRef);
+		bullet.initEnemy(enemyRef, player, 125);
 	}
 
-	function bulletHitMap(bulletRef:Bullet, mapRef:FlxObject):Void
+	function bulletHitObstacle(bulletRef:Bullet, mapRef:Obstacle):Void
+	{
+		bulletRef.kill();
+		trace("hit obstacle: " + mapRef);
+	}
+	
+	function bulletHitMap(bulletRef:Bullet, mapRef:FlxTile):Void
 	{
 		bulletRef.kill();
 		trace("hit map: " + mapRef);

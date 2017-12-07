@@ -81,6 +81,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -108,8 +112,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/room006.oel", AssetType.TEXT);
 		className.set ("assets/data/Tiles.oep", __ASSET__assets_data_tiles_oep);
 		type.set ("assets/data/Tiles.oep", AssetType.TEXT);
-		className.set ("assets/images/bullet.png", __ASSET__assets_images_bullet_png);
-		type.set ("assets/images/bullet.png", AssetType.IMAGE);
+		className.set ("assets/images/bulletEnemy.png", __ASSET__assets_images_bulletenemy_png);
+		type.set ("assets/images/bulletEnemy.png", AssetType.IMAGE);
+		className.set ("assets/images/bulletPlayer.png", __ASSET__assets_images_bulletplayer_png);
+		type.set ("assets/images/bulletPlayer.png", AssetType.IMAGE);
 		className.set ("assets/images/button.png", __ASSET__assets_images_button_png);
 		type.set ("assets/images/button.png", AssetType.IMAGE);
 		className.set ("assets/images/coin.png", __ASSET__assets_images_coin_png);
@@ -124,6 +130,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/player.png", AssetType.IMAGE);
 		className.set ("assets/images/rock.png", __ASSET__assets_images_rock_png);
 		type.set ("assets/images/rock.png", AssetType.IMAGE);
+		className.set ("assets/images/spitter-default.png", __ASSET__assets_images_spitter_default_png);
+		type.set ("assets/images/spitter-default.png", AssetType.IMAGE);
 		className.set ("assets/images/tiles.png", __ASSET__assets_images_tiles_png);
 		type.set ("assets/images/tiles.png", AssetType.IMAGE);
 		className.set ("assets/images/walker-big.png", __ASSET__assets_images_walker_big_png);
@@ -132,10 +140,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/walker-default.png", AssetType.IMAGE);
 		className.set ("assets/images/walker-strong.png", __ASSET__assets_images_walker_strong_png);
 		type.set ("assets/images/walker-strong.png", AssetType.IMAGE);
+		className.set ("assets/music/menu.wav", __ASSET__assets_music_menu_wav);
+		type.set ("assets/music/menu.wav", AssetType.SOUND);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/sounds/coin.wav", __ASSET__assets_sounds_coin_wav);
 		type.set ("assets/sounds/coin.wav", AssetType.SOUND);
+		className.set ("assets/sounds/enemy_shoot.wav", __ASSET__assets_sounds_enemy_shoot_wav);
+		type.set ("assets/sounds/enemy_shoot.wav", AssetType.SOUND);
 		className.set ("assets/sounds/hurt.wav", __ASSET__assets_sounds_hurt_wav);
 		type.set ("assets/sounds/hurt.wav", AssetType.SOUND);
 		className.set ("assets/sounds/select.wav", __ASSET__assets_sounds_select_wav);
@@ -199,7 +211,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
-		id = "assets/images/bullet.png";
+		id = "assets/images/bulletEnemy.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/bulletPlayer.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -231,6 +247,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/spitter-default.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tiles.png";
 		path.set (id, id);
 		
@@ -247,11 +267,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
+		id = "assets/music/menu.wav";
+		path.set (id, id);
+		
+		type.set (id, AssetType.SOUND);
 		id = "assets/music/music-goes-here.txt";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
 		id = "assets/sounds/coin.wav";
+		path.set (id, id);
+		
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/enemy_shoot.wav";
 		path.set (id, id);
 		
 		type.set (id, AssetType.SOUND);
@@ -344,8 +372,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/Tiles.oep", __ASSET__assets_data_tiles_oep);
 		type.set ("assets/data/Tiles.oep", AssetType.TEXT);
 		
-		className.set ("assets/images/bullet.png", __ASSET__assets_images_bullet_png);
-		type.set ("assets/images/bullet.png", AssetType.IMAGE);
+		className.set ("assets/images/bulletEnemy.png", __ASSET__assets_images_bulletenemy_png);
+		type.set ("assets/images/bulletEnemy.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/bulletPlayer.png", __ASSET__assets_images_bulletplayer_png);
+		type.set ("assets/images/bulletPlayer.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/button.png", __ASSET__assets_images_button_png);
 		type.set ("assets/images/button.png", AssetType.IMAGE);
@@ -368,6 +399,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/rock.png", __ASSET__assets_images_rock_png);
 		type.set ("assets/images/rock.png", AssetType.IMAGE);
 		
+		className.set ("assets/images/spitter-default.png", __ASSET__assets_images_spitter_default_png);
+		type.set ("assets/images/spitter-default.png", AssetType.IMAGE);
+		
 		className.set ("assets/images/tiles.png", __ASSET__assets_images_tiles_png);
 		type.set ("assets/images/tiles.png", AssetType.IMAGE);
 		
@@ -380,11 +414,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/walker-strong.png", __ASSET__assets_images_walker_strong_png);
 		type.set ("assets/images/walker-strong.png", AssetType.IMAGE);
 		
+		className.set ("assets/music/menu.wav", __ASSET__assets_music_menu_wav);
+		type.set ("assets/music/menu.wav", AssetType.SOUND);
+		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		
 		className.set ("assets/sounds/coin.wav", __ASSET__assets_sounds_coin_wav);
 		type.set ("assets/sounds/coin.wav", AssetType.SOUND);
+		
+		className.set ("assets/sounds/enemy_shoot.wav", __ASSET__assets_sounds_enemy_shoot_wav);
+		type.set ("assets/sounds/enemy_shoot.wav", AssetType.SOUND);
 		
 		className.set ("assets/sounds/hurt.wav", __ASSET__assets_sounds_hurt_wav);
 		type.set ("assets/sounds/hurt.wav", AssetType.SOUND);
@@ -1072,7 +1112,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_data_room005_oel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_room006_oel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_tiles_oep extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_images_bullet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_bulletenemy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_bulletplayer_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_button_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_coin_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_health_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1080,12 +1121,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_player_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_rock_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_spitter_default_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_walker_big_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_walker_default_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_walker_strong_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_music_menu_wav extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_coin_wav extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_enemy_shoot_wav extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_hurt_wav extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_select_wav extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
@@ -1100,6 +1144,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
@@ -1153,7 +1201,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/data/room005.oel") #if display private #end class __ASSET__assets_data_room005_oel extends lime.utils.Bytes {}
 @:file("assets/data/room006.oel") #if display private #end class __ASSET__assets_data_room006_oel extends lime.utils.Bytes {}
 @:file("assets/data/Tiles.oep") #if display private #end class __ASSET__assets_data_tiles_oep extends lime.utils.Bytes {}
-@:image("assets/images/bullet.png") #if display private #end class __ASSET__assets_images_bullet_png extends lime.graphics.Image {}
+@:image("assets/images/bulletEnemy.png") #if display private #end class __ASSET__assets_images_bulletenemy_png extends lime.graphics.Image {}
+@:image("assets/images/bulletPlayer.png") #if display private #end class __ASSET__assets_images_bulletplayer_png extends lime.graphics.Image {}
 @:image("assets/images/button.png") #if display private #end class __ASSET__assets_images_button_png extends lime.graphics.Image {}
 @:image("assets/images/coin.png") #if display private #end class __ASSET__assets_images_coin_png extends lime.graphics.Image {}
 @:image("assets/images/health.png") #if display private #end class __ASSET__assets_images_health_png extends lime.graphics.Image {}
@@ -1161,12 +1210,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
 @:image("assets/images/player.png") #if display private #end class __ASSET__assets_images_player_png extends lime.graphics.Image {}
 @:image("assets/images/rock.png") #if display private #end class __ASSET__assets_images_rock_png extends lime.graphics.Image {}
+@:image("assets/images/spitter-default.png") #if display private #end class __ASSET__assets_images_spitter_default_png extends lime.graphics.Image {}
 @:image("assets/images/tiles.png") #if display private #end class __ASSET__assets_images_tiles_png extends lime.graphics.Image {}
 @:image("assets/images/walker-big.png") #if display private #end class __ASSET__assets_images_walker_big_png extends lime.graphics.Image {}
 @:image("assets/images/walker-default.png") #if display private #end class __ASSET__assets_images_walker_default_png extends lime.graphics.Image {}
 @:image("assets/images/walker-strong.png") #if display private #end class __ASSET__assets_images_walker_strong_png extends lime.graphics.Image {}
+@:file("assets/music/menu.wav") #if display private #end class __ASSET__assets_music_menu_wav extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/sounds/coin.wav") #if display private #end class __ASSET__assets_sounds_coin_wav extends lime.utils.Bytes {}
+@:file("assets/sounds/enemy_shoot.wav") #if display private #end class __ASSET__assets_sounds_enemy_shoot_wav extends lime.utils.Bytes {}
 @:file("assets/sounds/hurt.wav") #if display private #end class __ASSET__assets_sounds_hurt_wav extends lime.utils.Bytes {}
 @:file("assets/sounds/select.wav") #if display private #end class __ASSET__assets_sounds_select_wav extends lime.utils.Bytes {}
 @:file("assets/sounds/sounds-go-here.txt") #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends lime.utils.Bytes {}

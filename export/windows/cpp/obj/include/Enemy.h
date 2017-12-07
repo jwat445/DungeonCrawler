@@ -62,6 +62,7 @@ class HXCPP_CLASS_ATTRIBUTES Enemy_obj : public  ::flixel::FlxSprite_obj
 		bool seesPlayer;
 		 ::flixel::math::FlxPoint playerPos;
 		 ::flixel::_hx_system::FlxSound _sndStep;
+		 ::flixel::_hx_system::FlxSound _sndShoot;
 		int bulletDelay;
 		void draw();
 

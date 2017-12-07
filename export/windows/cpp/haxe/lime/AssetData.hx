@@ -52,6 +52,8 @@ class AssetData {
 			type.set ("assets/images/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/rock.png", "assets/images/rock.png");
 			type.set ("assets/images/rock.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/spitter-default.png", "assets/images/spitter-default.png");
+			type.set ("assets/images/spitter-default.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/tiles.png", "assets/images/tiles.png");
 			type.set ("assets/images/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/walker-big.png", "assets/images/walker-big.png");
@@ -60,10 +62,14 @@ class AssetData {
 			type.set ("assets/images/walker-default.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/walker-strong.png", "assets/images/walker-strong.png");
 			type.set ("assets/images/walker-strong.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/music/menu.wav", "assets/music/menu.wav");
+			type.set ("assets/music/menu.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 			type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sounds/coin.wav", "assets/sounds/coin.wav");
 			type.set ("assets/sounds/coin.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/enemy_shoot.wav", "assets/sounds/enemy_shoot.wav");
+			type.set ("assets/sounds/enemy_shoot.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/hurt.wav", "assets/sounds/hurt.wav");
 			type.set ("assets/sounds/hurt.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/select.wav", "assets/sounds/select.wav");

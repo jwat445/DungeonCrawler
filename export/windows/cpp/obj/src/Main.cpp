@@ -64,7 +64,7 @@ HX_DEFINE_STACK_FRAME(_hx_pos_e47a9afac0942eb9_15_new,"Main","new",0x6616a5cb,"M
 void Main_obj::__construct(){
             	HX_GC_STACKFRAME(&_hx_pos_e47a9afac0942eb9_15_new)
 HXLINE(  16)		super::__construct();
-HXLINE(  17)		this->addChild( ::flixel::FlxGame_obj::__alloc( HX_CTX ,(int)608,(int)480,hx::ClassOf< ::MenuState >(),null(),null(),null(),null(),null()));
+HXLINE(  17)		this->addChild( ::flixel::FlxGame_obj::__alloc( HX_CTX ,(int)608,(int)480,hx::ClassOf< ::MenuState >(),(int)1,(int)60,(int)60,true,false));
 HXLINE(  19)		 ::flixel::util::FlxSave _save =  ::flixel::util::FlxSave_obj::__alloc( HX_CTX );
 HXLINE(  20)		_save->bind(HX_("DungeonGame",ec,25,05,13));
 HXLINE(  21)		if (hx::IsNotNull(  ::Dynamic(_save->data->__Field(HX_("volume",da,29,53,5f),hx::paccDynamic)) )) {

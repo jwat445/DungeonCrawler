@@ -26,7 +26,7 @@ class ApplicationMain {
 	
 	public static function main () {
 		
-		flash.Lib.setPackage ("HaxeFlixel", "FlixelTut", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "DungeonGame", "com.example.myapp", "0.0.1");
 		
 		
 		#if ios
@@ -40,7 +40,7 @@ class ApplicationMain {
 		telemetryConfig = new hxtelemetry.HxTelemetry.Config ();
 		telemetryConfig.allocations = true;
 		telemetryConfig.host = "localhost";
-		telemetryConfig.app_name = "FlixelTut";
+		telemetryConfig.app_name = "DungeonGame";
 		#end
 		
 		
@@ -141,7 +141,7 @@ class ApplicationMain {
 			(false ? flash.Lib.FULLSCREEN : 0) |
 			(0 == 4 ? flash.Lib.HW_AA_HIRES : 0) |
 			(0 == 2 ? flash.Lib.HW_AA : 0),
-			"FlixelTut",
+			"DungeonGame",
 			null
 			#if mobile, ScaledStage #end
 		);
@@ -318,14 +318,14 @@ class ApplicationMain {
 	public static function main () {
 		
 		#if openfl
-		flash.Lib.setPackage ("HaxeFlixel", "FlixelTut", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "DungeonGame", "com.example.myapp", "0.0.1");
 		
 		#end
 		
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "FlixelTut", null, { width: 640, height: 480 });
+			frame = wx.Frame.create (null, null, "DungeonGame", null, { width: 640, height: 480 });
 			
 			
 			#if openfl
@@ -515,11 +515,11 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "742",
+			build: "875",
 			company: "HaxeFlixel",
-			file: "FlixelTut",
+			file: "DungeonGame",
 			fps: 60,
-			name: "FlixelTut",
+			name: "DungeonGame",
 			orientation: "landscape",
 			packageName: "com.example.myapp",
 			version: "0.0.1",
@@ -537,7 +537,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: false,
-					title: "FlixelTut",
+					title: "DungeonGame",
 					vsync: true,
 					width: 640,
 					x: null,

@@ -66,7 +66,11 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
-		urls.push ("assets/images/bullet.png");
+		urls.push ("assets/images/bulletEnemy.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/bulletPlayer.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -98,6 +102,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/spitter-default.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/tiles.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -114,11 +122,19 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/music/menu.wav");
+		types.push (lime.Assets.AssetType.SOUND);
+		
+		
 		urls.push ("assets/music/music-goes-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
 		urls.push ("assets/sounds/coin.wav");
+		types.push (lime.Assets.AssetType.SOUND);
+		
+		
+		urls.push ("assets/sounds/enemy_shoot.wav");
 		types.push (lime.Assets.AssetType.SOUND);
 		
 		
@@ -227,7 +243,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "689",
+			build: "803",
 			company: "HaxeFlixel",
 			file: "FlixelTut",
 			fps: 60,

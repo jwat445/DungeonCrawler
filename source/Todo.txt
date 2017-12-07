@@ -1,6 +1,8 @@
 TODO
 
-Priority: get enemy to shoot at player and only when whithin a certain range
+Priority: Sometimes enemy bullets are colliding as soon as they shoot (try creating the bullets outside the enemy like you do with the player). Also add field of view (so they dont shoot from behind obstacle)
+	- field of view for ALL enemies will require updating seesPlayer to consider obstacles (false if sight hits obstacle before it hits player)
+	- animate shooters
 
 1. Random Map Generation
  - make enemy positions in ogmo POTENTIAL positsions, then depending on where the player comes in from, dont spawn the close enemies
@@ -11,8 +13,7 @@ Priority: get enemy to shoot at player and only when whithin a certain range
 	- it must choose from a list of rooms based on their attributes
  - randomly genreate rooms when a new map is created
 
-2. Pathfinding- split movement into x and y. If hitting an obstacle, find which direction it is blocking from (x or y axis), then move a step in the other axis. 
-	ex. if moving down and left and hit an obstaccle, find somthing blocking from bottom, then move left only and check each frame if you can start moving left and down again.
+2. Pathfinding- use flxTileMap.find path BUT you have to make markers in the tile map with ogmo for EVERYTHING so ai can avoid everything
 
 3. generate random dungeon and floor name, maybe random player names
 
@@ -27,3 +28,6 @@ PATHFINDING- override FlxBaseTileMap.findmap to include entities from omgoloader
 BUGS
 1. random bullet angle bug
 2. enemgy teleport to you when hit bug
+
+
+first meet pen, gives you letter, then met pal. Give him letter for reward, maybe back and forth letters. Maybe even between lives.
