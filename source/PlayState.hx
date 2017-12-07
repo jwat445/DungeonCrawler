@@ -21,7 +21,7 @@ using flixel.util.FlxSpriteUtil;
 /**
  * The primary state of the game. Does way too much at this
  * point. Most of the more specific game logic should be put
- * into their own classes
+ * into their own classes.
  * @author Joshua
  */
 class PlayState extends FlxState
