@@ -25,11 +25,13 @@ class Enemy extends FlxSprite
 	private var _sndStep:FlxSound;
 	private var _sndShoot:FlxSound;
 	public var bulletDelay:Int;
+	public var room_start_timer:Int;
 
 	public function new(X:Float = 0, Y:Float=0, Etype:String)
 	{
 		super(X, Y);
 		bulletDelay = 50; //amount of time before any enemy starts shooting at player. Time between shots should be defined using this varialbe but in the specific enemy class.
+		room_start_timer = 50; //amount of time before an enemy can start chasing the player at the beginning of each room
 	}
 
 	override public function draw():Void

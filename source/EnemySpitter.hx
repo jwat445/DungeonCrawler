@@ -15,7 +15,6 @@ import flixel.effects.FlxFlicker;
  */
 class EnemySpitter extends Enemy
 {
-	aw
 	override public function new(X:Float = 0, Y:Float=0, Etype:String)
 	{
 		super(X, Y, Etype);

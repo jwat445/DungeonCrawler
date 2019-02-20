@@ -60,7 +60,7 @@ class EnemyWalker extends Enemy
 
 	override public function idle():Void
 	{
-		if (seesPlayer)
+		if (seesPlayer && room_start_timer <= 0 )
 		{
 			_brain.activeState = chase;
 		}
@@ -80,6 +80,7 @@ class EnemyWalker extends Enemy
 			_idleTmr = FlxG.random.int(1, 4);
 		}
 		else
+			room_start_timer--;
 			_idleTmr -= FlxG.elapsed;
 	}
 

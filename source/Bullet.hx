@@ -38,6 +38,7 @@ class Bullet extends FlxSprite
 			
 			velocity.x += player.velocity.x;
 		}
+		
 	}
 	
 	public function initEnemy(enemy:Enemy, player:Player, speed:Int)

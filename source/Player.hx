@@ -74,7 +74,8 @@ class Player extends FlxSprite
 					mA -= 45;
 				else if (walk_right)
 					mA += 45;
-				facing = FlxObject.UP; // the sprite should be facing UP
+				else 
+					facing = FlxObject.UP; // the sprite should be facing UP
 			}
 			else if (walk_down)
 			{
@@ -83,7 +84,8 @@ class Player extends FlxSprite
 					mA += 45;
 				else if (walk_right)
 					mA -= 45;
-				facing = FlxObject.DOWN; // the sprite is facing DOWN
+				else
+					facing = FlxObject.DOWN; // the sprite is facing DOWN
 			}
 			else if (walk_left)
 			{

@@ -32,6 +32,8 @@ class AssetData {
 			type.set ("assets/data/room005.oel", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/data/room006.oel", "assets/data/room006.oel");
 			type.set ("assets/data/room006.oel", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/data/room007.oel", "assets/data/room007.oel");
+			type.set ("assets/data/room007.oel", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/data/Tiles.oep", "assets/data/Tiles.oep");
 			type.set ("assets/data/Tiles.oep", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/bulletEnemy.png", "assets/images/bulletEnemy.png");
