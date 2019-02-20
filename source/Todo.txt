@@ -30,4 +30,17 @@ BUGS
 2. enemgy teleport to you when hit bug
 
 
+content/story ideas
 first meet pen, gives you letter, then met pal. Give him letter for reward, maybe back and forth letters. Maybe even between lives.
+
+Every floor you can help an npc and then you can summon them for that floor boss
+
+activated in room adds extreme offensive buff and speed, adds one second for every enemy you kill. Maybe it an ult activated, not just a normal activated item
+
+player has two activated generic damage dealingish abilities (q and e) and one utility ability (shift) that can be upgraded or changed in the game or by choosing a differenct character. These have timing/ammo that determine how much you can use them.
+Player also has an ult ability (space) that you can get rarely, or maybe get after reaching a certain point in the run. Instead of the time/ammo, the ult has a charge that builds by defeating enemies or doing certain points (like beating a boss)
+
+Perhaps characters also start out with certain passives, but passives or certain strengths can also be found throguhout the game
+
+Characters definitely have different starting stats, maybe different stat scaling?
+
